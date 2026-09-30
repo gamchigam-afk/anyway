@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Anyway. — 404</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html,body{
+    width:100%;
+    min-height:100%;
+}
+
+body{
+    background:#fff;
+    color:#111;
+    font-family:
+        Inter,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        sans-serif;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    overflow:hidden;
+}
+
+.container{
+    width:min(1000px, calc(100% - 40px));
+    padding:40px 0;
+}
+
+.code{
+    font-size:clamp(110px, 22vw, 260px);
+    line-height:.72;
+    font-weight:850;
+    letter-spacing:-.11em;
+}
+
+.label{
+    margin-top:65px;
+
+    font-size:11px;
+    letter-spacing:.18em;
+    text-transform:uppercase;
+
+    opacity:.45;
+}
+
+.title{
+    margin-top:22px;
+
+    font-size:clamp(35px, 6vw, 75px);
+    line-height:.95;
+    letter-spacing:-.06em;
+    font-weight:750;
+}
+
+.message{
+    max-width:620px;
+    margin-top:35px;
+
+    font-size:17px;
+    line-height:1.9;
+}
+
+.message .ko{
+    margin-top:18px;
+
+    font-size:14px;
+    color:#777;
+    line-height:1.9;
+}
+
+.back{
+    display:inline-block;
+
+    margin-top:45px;
+    padding:14px 20px;
+
+    background:#111;
+    color:#fff;
+
+    font-size:10px;
+    font-weight:700;
+    letter-spacing:.13em;
+    text-transform:uppercase;
+
+    transition:
+        transform .25s ease,
+        background .25s ease;
+}
+
+.back:hover{
+    transform:translateY(-3px);
+    background:#333;
+}
+
+.logo{
+    position:fixed;
+    top:30px;
+    left:35px;
+
+    width:90px;
+    max-height:40px;
+    object-fit:contain;
+}
+
+.corner{
+    position:fixed;
+    right:35px;
+    bottom:30px;
+
+    font-size:9px;
+    letter-spacing:.12em;
+    text-transform:uppercase;
+
+    opacity:.3;
+}
+
+@media(max-width:600px){
+
+    .logo{
+        top:20px;
+        left:20px;
+        width:75px;
+    }
+
+    .corner{
+        right:20px;
+        bottom:20px;
+    }
+
+    .label{
+        margin-top:50px;
+    }
+
+    .message{
+        font-size:15px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<img
+    src="logo.png"
+    class="logo"
+    alt="Anyway."
+>
+
+<div class="container">
+
+    <div class="code">
+        404
+    </div>
+
+    <div class="label">
+        Anyway. / Error
+    </div>
+
+    <h1 class="title">
+        Oh... hello.
+    </h1>
+
+    <div class="message">
+
+        아, 안녕하세요.
+
+        <br>
+
+        어... 사실 제가 이 사이트를
+        다 먹어버렸어요.
+
+        <div class="ko">
+
+            엄... 아직 안 먹은 사이트가 있으니
+            다시 거기로 가주세요.
+
+        </div>
+
+    </div>
+
+    <a
+        href="https://gamchigam-afk.github.io/web-hub/"
+        class="back"
+    >
+        아직 안먹은곳 바로가기 →
+    </a>
+
+</div>
+
+<div class="corner">
+    먹어보려허지 마세요,183년동안 지하 벙커에 방치된 참치 통조림맛이 나요.
+</div>
+
+</body>
+</html>
