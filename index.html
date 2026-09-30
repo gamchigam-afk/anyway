@@ -1,0 +1,1420 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Anyway Cooperation — 아무튼 사</title>
+
+<meta name="description"
+content="Anyway Cooperation — 아무튼 사. 웹과 디지털 경험을 만드는 작은 스튜디오.">
+
+<meta name="theme-color" content="#ffffff">
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+KR:wght@400;500;600;700;800&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:
+        Inter,
+        "Noto Sans KR",
+        Arial,
+        sans-serif;
+
+    background:#fff;
+    color:#111;
+
+    overflow-x:hidden;
+}
+
+/* =========================
+   기본
+========================= */
+
+a{
+    color:inherit;
+    text-decoration:none;
+}
+
+button{
+    font:inherit;
+}
+
+::selection{
+    background:#111;
+    color:#fff;
+}
+
+
+/* =========================
+   배경 효과
+========================= */
+
+.noise{
+    position:fixed;
+    inset:0;
+
+    pointer-events:none;
+    z-index:9999;
+
+    opacity:.025;
+
+    background-image:
+        url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.8'/%3E%3C/svg%3E");
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+header{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+
+    height:82px;
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+
+    padding:0 5vw;
+
+    z-index:1000;
+
+    background:rgba(255,255,255,.82);
+
+    backdrop-filter:blur(18px);
+    -webkit-backdrop-filter:blur(18px);
+
+    border-bottom:1px solid rgba(0,0,0,.06);
+}
+
+.brand{
+    display:flex;
+    align-items:center;
+    gap:14px;
+
+    font-size:14px;
+    font-weight:700;
+    letter-spacing:.08em;
+}
+
+.brand img{
+    width:32px;
+    height:32px;
+
+    object-fit:contain;
+}
+
+.nav{
+    display:flex;
+    align-items:center;
+    gap:34px;
+
+    font-size:12px;
+    font-weight:600;
+
+    letter-spacing:.12em;
+}
+
+.nav a{
+    position:relative;
+
+    color:#555;
+
+    transition:.3s;
+}
+
+.nav a:hover{
+    color:#000;
+}
+
+.nav a::after{
+    content:"";
+
+    position:absolute;
+    left:0;
+    bottom:-7px;
+
+    width:0;
+    height:1px;
+
+    background:#111;
+
+    transition:.3s;
+}
+
+.nav a:hover::after{
+    width:100%;
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero{
+    min-height:100vh;
+
+    padding:
+        140px 7vw
+        80px;
+
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+
+    text-align:center;
+
+    position:relative;
+}
+
+.hero-symbol{
+    width:min(230px,42vw);
+    height:min(230px,42vw);
+
+    object-fit:contain;
+
+    margin-bottom:55px;
+
+    opacity:0;
+
+    animation:
+        logoReveal 1.3s cubic-bezier(.2,.8,.2,1)
+        forwards;
+}
+
+@keyframes logoReveal{
+    from{
+        opacity:0;
+        transform:
+            scale(.82)
+            translateY(30px);
+        filter:blur(10px);
+    }
+
+    to{
+        opacity:1;
+        transform:
+            scale(1)
+            translateY(0);
+        filter:blur(0);
+    }
+}
+
+.hero-small{
+    font-size:11px;
+    font-weight:700;
+
+    letter-spacing:.32em;
+
+    color:#888;
+
+    margin-bottom:22px;
+
+    opacity:0;
+
+    animation:
+        fadeUp .9s .4s forwards;
+}
+
+.hero h1{
+    font-size:
+        clamp(48px,8vw,110px);
+
+    line-height:.95;
+
+    letter-spacing:-.065em;
+
+    font-weight:800;
+
+    margin-bottom:25px;
+
+    opacity:0;
+
+    animation:
+        fadeUp 1s .55s forwards;
+}
+
+.hero h1 span{
+    color:#aaa;
+}
+
+.hero-desc{
+    max-width:600px;
+
+    font-size:15px;
+    line-height:1.9;
+
+    color:#777;
+
+    opacity:0;
+
+    animation:
+        fadeUp 1s .7s forwards;
+}
+
+@keyframes fadeUp{
+    from{
+        opacity:0;
+        transform:translateY(25px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+.hero-link{
+    margin-top:45px;
+
+    display:flex;
+    align-items:center;
+    gap:15px;
+
+    font-size:12px;
+    font-weight:700;
+
+    letter-spacing:.12em;
+
+    opacity:0;
+
+    animation:
+        fadeUp 1s .85s forwards;
+}
+
+.hero-link span{
+    display:flex;
+
+    width:42px;
+    height:42px;
+
+    align-items:center;
+    justify-content:center;
+
+    border:1px solid #ddd;
+    border-radius:50%;
+
+    transition:.35s;
+}
+
+.hero-link:hover span{
+    background:#111;
+    color:#fff;
+    border-color:#111;
+
+    transform:translateX(5px);
+}
+
+.scroll{
+    position:absolute;
+
+    bottom:35px;
+    left:50%;
+
+    transform:translateX(-50%);
+
+    font-size:9px;
+    font-weight:700;
+
+    letter-spacing:.3em;
+
+    color:#aaa;
+
+    writing-mode:vertical-rl;
+}
+
+
+/* =========================
+   SECTION COMMON
+========================= */
+
+section{
+    padding:
+        150px 7vw;
+}
+
+.section-label{
+    display:flex;
+    align-items:center;
+    gap:15px;
+
+    font-size:10px;
+    font-weight:700;
+
+    letter-spacing:.25em;
+
+    color:#999;
+
+    margin-bottom:35px;
+}
+
+.section-label::before{
+    content:"";
+
+    width:30px;
+    height:1px;
+
+    background:#bbb;
+}
+
+.section-title{
+    font-size:
+        clamp(38px,6vw,78px);
+
+    line-height:1;
+
+    letter-spacing:-.055em;
+
+    font-weight:800;
+}
+
+
+/* =========================
+   ABOUT
+========================= */
+
+.about{
+    border-top:1px solid #eee;
+
+    display:grid;
+
+    grid-template-columns:
+        1fr 1.5fr;
+
+    gap:10vw;
+}
+
+.about-text{
+    font-size:
+        clamp(24px,3vw,43px);
+
+    line-height:1.35;
+
+    letter-spacing:-.035em;
+
+    font-weight:600;
+}
+
+.about-text span{
+    color:#aaa;
+}
+
+.about-detail{
+    max-width:560px;
+
+    padding-top:5px;
+
+    font-size:15px;
+
+    line-height:2;
+
+    color:#666;
+}
+
+.about-detail p + p{
+    margin-top:25px;
+}
+
+
+/* =========================
+   WEB HUB
+========================= */
+
+.hub{
+    background:#f6f6f6;
+
+    position:relative;
+
+    overflow:hidden;
+}
+
+.hub::before{
+    content:"";
+
+    position:absolute;
+
+    width:600px;
+    height:600px;
+
+    border-radius:50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(0,0,0,.055),
+            transparent 65%
+        );
+
+    right:-250px;
+    top:-250px;
+}
+
+.hub-box{
+    margin-top:70px;
+
+    position:relative;
+
+    border-top:1px solid #ccc;
+    border-bottom:1px solid #ccc;
+
+    padding:45px 0;
+
+    display:flex;
+
+    align-items:center;
+    justify-content:space-between;
+
+    gap:30px;
+}
+
+.hub-info small{
+    display:block;
+
+    font-size:10px;
+    font-weight:700;
+
+    letter-spacing:.2em;
+
+    color:#999;
+
+    margin-bottom:13px;
+}
+
+.hub-info h3{
+    font-size:
+        clamp(28px,4vw,52px);
+
+    letter-spacing:-.05em;
+}
+
+.hub-info p{
+    margin-top:12px;
+
+    font-size:13px;
+
+    color:#888;
+}
+
+.hub-button{
+    width:64px;
+    height:64px;
+
+    border-radius:50%;
+
+    border:1px solid #bbb;
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    font-size:20px;
+
+    transition:.35s;
+
+    flex-shrink:0;
+}
+
+.hub-box:hover .hub-button{
+    background:#111;
+    color:#fff;
+
+    border-color:#111;
+
+    transform:rotate(-45deg);
+}
+
+
+/* =========================
+   NEWS
+========================= */
+
+.news{
+    border-top:1px solid #eee;
+}
+
+.news-list{
+    margin-top:70px;
+
+    border-top:1px solid #ddd;
+}
+
+.news-item{
+    display:grid;
+
+    grid-template-columns:
+        140px 1fr auto;
+
+    align-items:center;
+
+    gap:30px;
+
+    padding:32px 0;
+
+    border-bottom:1px solid #ddd;
+
+    transition:.3s;
+}
+
+.news-item:hover{
+    padding-left:15px;
+}
+
+.news-date{
+    font-size:11px;
+
+    color:#999;
+
+    letter-spacing:.1em;
+}
+
+.news-content h3{
+    font-size:17px;
+
+    font-weight:600;
+
+    letter-spacing:-.02em;
+}
+
+.news-content p{
+    margin-top:8px;
+
+    color:#999;
+
+    font-size:12px;
+}
+
+.news-arrow{
+    font-size:18px;
+
+    color:#aaa;
+
+    transition:.3s;
+}
+
+.news-item:hover .news-arrow{
+    color:#111;
+    transform:translateX(5px);
+}
+
+
+/* =========================
+   PHILOSOPHY
+========================= */
+
+.philosophy{
+    background:#111;
+
+    color:#fff;
+
+    min-height:70vh;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+}
+
+.philosophy .section-label{
+    color:#777;
+}
+
+.philosophy .section-label::before{
+    background:#555;
+}
+
+.philosophy-main{
+    font-size:
+        clamp(42px,8vw,105px);
+
+    line-height:.98;
+
+    letter-spacing:-.065em;
+
+    font-weight:800;
+}
+
+.philosophy-main span{
+    color:#555;
+}
+
+.philosophy-sub{
+    margin-top:45px;
+
+    max-width:600px;
+
+    color:#888;
+
+    font-size:14px;
+
+    line-height:2;
+}
+
+
+/* =========================
+   CONTACT
+========================= */
+
+.contact{
+    text-align:center;
+
+    min-height:65vh;
+
+    display:flex;
+    flex-direction:column;
+
+    align-items:center;
+    justify-content:center;
+}
+
+.contact .section-label{
+    justify-content:center;
+}
+
+.contact-title{
+    font-size:
+        clamp(42px,7vw,90px);
+
+    font-weight:800;
+
+    letter-spacing:-.065em;
+
+    line-height:1;
+
+    margin-bottom:35px;
+}
+
+.contact-desc{
+    color:#888;
+
+    font-size:14px;
+
+    line-height:1.8;
+}
+
+.contact-line{
+    margin-top:45px;
+
+    width:100%;
+
+    max-width:550px;
+
+    border-top:1px solid #ddd;
+
+    padding-top:20px;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    font-size:11px;
+
+    color:#888;
+
+    letter-spacing:.08em;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer{
+    padding:35px 7vw;
+
+    border-top:1px solid #eee;
+
+    display:flex;
+
+    align-items:center;
+    justify-content:space-between;
+
+    font-size:10px;
+
+    color:#999;
+
+    letter-spacing:.1em;
+}
+
+.footer-brand{
+    color:#111;
+
+    font-weight:700;
+}
+
+
+/* =========================
+   REVEAL
+========================= */
+
+.reveal{
+    opacity:0;
+
+    transform:translateY(45px);
+
+    transition:
+        opacity .9s ease,
+        transform .9s cubic-bezier(.2,.8,.2,1);
+}
+
+.reveal.show{
+    opacity:1;
+
+    transform:translateY(0);
+}
+
+
+/* =========================
+   모바일
+========================= */
+
+@media(max-width:800px){
+
+    header{
+        height:68px;
+
+        padding:0 20px;
+    }
+
+    .brand{
+        font-size:11px;
+    }
+
+    .brand img{
+        width:27px;
+        height:27px;
+    }
+
+    .nav{
+        gap:14px;
+
+        font-size:9px;
+    }
+
+    .nav a:nth-child(2){
+        display:none;
+    }
+
+    .hero{
+        padding:
+            110px 25px
+            70px;
+    }
+
+    .hero-symbol{
+        width:150px;
+        height:150px;
+
+        margin-bottom:42px;
+    }
+
+    .hero h1{
+        font-size:
+            clamp(45px,15vw,75px);
+    }
+
+    .hero-desc{
+        font-size:13px;
+    }
+
+    section{
+        padding:
+            100px 25px;
+    }
+
+    .about{
+        display:block;
+    }
+
+    .about-text{
+        margin-bottom:55px;
+    }
+
+    .about-detail{
+        font-size:13px;
+    }
+
+    .hub-box{
+        padding:30px 0;
+    }
+
+    .hub-button{
+        width:52px;
+        height:52px;
+    }
+
+    .news-item{
+        grid-template-columns:
+            80px 1fr auto;
+
+        gap:15px;
+
+        padding:25px 0;
+    }
+
+    .news-content h3{
+        font-size:14px;
+    }
+
+    .news-content p{
+        font-size:10px;
+    }
+
+    .philosophy{
+        min-height:65vh;
+    }
+
+    .contact-line{
+        flex-direction:column;
+
+        gap:10px;
+    }
+
+    footer{
+        padding:
+            30px 25px;
+
+        flex-direction:column;
+
+        gap:10px;
+
+        text-align:center;
+    }
+}
+</style>
+</head>
+
+
+<body>
+
+<div class="noise"></div>
+
+
+<!-- =========================
+     HEADER
+========================= -->
+
+<header>
+
+    <a href="#home" class="brand">
+
+        <img
+            src="logo.png"
+            alt="Anyway Cooperation Logo"
+        >
+
+        <span>ANYWAY COOPERATION</span>
+
+    </a>
+
+
+    <nav class="nav">
+
+        <a href="#about">ABOUT</a>
+
+        <a href="#news">NEWS</a>
+
+        <a href="#hub">WEB HUB</a>
+
+    </nav>
+
+</header>
+
+
+
+<!-- =========================
+     HERO
+========================= -->
+
+<main>
+
+<section class="hero" id="home">
+
+    <img
+        class="hero-symbol"
+        src="logo.png"
+        alt="Anyway Cooperation"
+    >
+
+    <div class="hero-small">
+        ANYWAY COOPERATION
+    </div>
+
+    <h1>
+        아무튼,<br>
+        <span>만듭니다.</span>
+    </h1>
+
+    <p class="hero-desc">
+        웹과 디지털 경험을 만들고,<br>
+        새로운 아이디어를 실제 공간으로 옮깁니다.
+    </p>
+
+    <a
+        class="hero-link"
+        href="#hub"
+    >
+        EXPLORE
+        <span>↓</span>
+    </a>
+
+    <div class="scroll">
+        SCROLL
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     ABOUT
+========================= -->
+
+<section class="about reveal" id="about">
+
+    <div>
+
+        <div class="section-label">
+            ABOUT
+        </div>
+
+        <h2 class="section-title">
+            ANYWAY<br>
+            COOPERATION
+        </h2>
+
+    </div>
+
+
+    <div>
+
+        <div class="about-text">
+
+            <span>특별한 이유가 없어도</span><br>
+            일단 만들어봅니다.<br>
+            그리고 더 나은 것을<br>
+            찾아갑니다.
+
+        </div>
+
+
+        <div class="about-detail">
+
+            <p>
+                Anyway Cooperation은 다양한 아이디어를
+                웹과 디지털 프로젝트로 만들어가는
+                독립 스튜디오입니다.
+            </p>
+
+            <p>
+                정해진 방식에만 머무르지 않고,
+                직접 만들고 실험하며 새로운 경험을
+                만들어가는 것을 목표로 합니다.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     WEB HUB
+========================= -->
+
+<section class="hub reveal" id="hub">
+
+    <div class="section-label">
+        WORKS
+    </div>
+
+    <h2 class="section-title">
+        WEB HUB
+    </h2>
+
+
+    <div class="hub-box">
+
+        <div class="hub-info">
+
+            <small>
+                ANYWAY COOPERATION / WEB HUB
+            </small>
+
+            <h3>
+                우리가 만든 것들
+            </h3>
+
+            <p>
+                다양한 웹 프로젝트와 실험을 한 곳에서 확인하세요.
+            </p>
+
+        </div>
+
+
+        <a
+            class="hub-button"
+            href="https://gamchigam-afk.github.io/web-hub/"
+            target="_blank"
+            rel="noopener"
+            aria-label="Web Hub 열기"
+        >
+            ↗
+        </a>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     NEWS
+========================= -->
+
+<section class="news reveal" id="news">
+
+    <div class="section-label">
+        NEWS
+    </div>
+
+    <h2 class="section-title">
+        LATEST
+    </h2>
+
+
+    <div class="news-list">
+
+
+        <div class="news-item">
+
+            <div class="news-date">
+                2026
+            </div>
+
+            <div class="news-content">
+
+                <h3>
+                    Anyway Cooperation 공식 웹사이트 오픈
+                </h3>
+
+                <p>
+                    새로운 공간에서 우리의 활동을 소개합니다.
+                </p>
+
+            </div>
+
+            <div class="news-arrow">
+                →
+            </div>
+
+        </div>
+
+
+
+        <div class="news-item">
+
+            <div class="news-date">
+                NOW
+            </div>
+
+            <div class="news-content">
+
+                <h3>
+                    새로운 프로젝트를 계속 만들고 있습니다.
+                </h3>
+
+                <p>
+                    실험하고, 만들고, 업데이트합니다.
+                </p>
+
+            </div>
+
+            <div class="news-arrow">
+                →
+            </div>
+
+        </div>
+
+
+
+        <div class="news-item">
+
+            <div class="news-date">
+                01
+            </div>
+
+            <div class="news-content">
+
+                <h3>
+                    Web Hub 업데이트
+                </h3>
+
+                <p>
+                    프로젝트를 확인할 수 있는 Web Hub를 운영합니다.
+                </p>
+
+            </div>
+
+            <div class="news-arrow">
+                →
+            </div>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     PHILOSOPHY
+========================= -->
+
+<section class="philosophy reveal">
+
+    <div class="section-label">
+        PHILOSOPHY
+    </div>
+
+    <div class="philosophy-main">
+
+        JUST<br>
+
+        <span>MAKE</span><br>
+
+        IT.
+
+    </div>
+
+    <p class="philosophy-sub">
+
+        아이디어가 생기면 만들어봅니다.
+        부족하면 고치고,
+        재미있으면 계속합니다.
+
+        <br><br>
+
+        Anyway.
+
+    </p>
+
+</section>
+
+
+
+<!-- =========================
+     CONTACT
+========================= -->
+
+<section class="contact reveal">
+
+    <div class="section-label">
+        CONTACT
+    </div>
+
+    <h2 class="contact-title">
+        LET'S MAKE<br>
+        SOMETHING.
+    </h2>
+
+    <p class="contact-desc">
+
+        새로운 아이디어와 프로젝트를 만들어갑니다.<br>
+        Anyway Cooperation
+
+    </p>
+
+
+    <div class="contact-line">
+
+        <span>
+            ANYWAY COOPERATION
+        </span>
+
+        <span>
+            아무튼 사
+        </span>
+
+    </div>
+
+</section>
+
+</main>
+
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer>
+
+    <div class="footer-brand">
+        ANYWAY COOPERATION
+    </div>
+
+    <div>
+        © 2026 ANYWAY COOPERATION
+    </div>
+
+    <div>
+        아무튼 사
+    </div>
+
+</footer>
+
+
+
+<script>
+
+/* =========================
+   Scroll Reveal
+========================= */
+
+const revealElements =
+    document.querySelectorAll(".reveal");
+
+
+const observer =
+    new IntersectionObserver(
+        (entries) => {
+
+            entries.forEach(entry => {
+
+                if(entry.isIntersecting){
+
+                    entry.target.classList.add("show");
+
+                }
+
+            });
+
+        },
+        {
+            threshold:0.12
+        }
+    );
+
+
+revealElements.forEach(element => {
+
+    observer.observe(element);
+
+});
+
+
+
+/* =========================
+   마우스에 살짝 반응하는 로고
+========================= */
+
+const logo =
+    document.querySelector(".hero-symbol");
+
+
+document.addEventListener(
+    "mousemove",
+    (event) => {
+
+        if(window.innerWidth <= 800)
+            return;
+
+        const x =
+            (event.clientX / window.innerWidth - .5);
+
+        const y =
+            (event.clientY / window.innerHeight - .5);
+
+
+        logo.style.transform =
+            `
+            translate(
+                ${x * 8}px,
+                ${y * 8}px
+            )
+            `;
+
+    }
+);
+
+
+
+/* =========================
+   현재 섹션 감지
+========================= */
+
+const sections =
+    document.querySelectorAll("section[id]");
+
+const navLinks =
+    document.querySelectorAll(".nav a");
+
+
+window.addEventListener(
+    "scroll",
+    () => {
+
+        let current = "";
+
+        sections.forEach(section => {
+
+            const sectionTop =
+                section.offsetTop - 150;
+
+            if(
+                window.scrollY >= sectionTop
+            ){
+
+                current =
+                    section.getAttribute("id");
+
+            }
+
+        });
+
+
+        navLinks.forEach(link => {
+
+            link.style.color = "";
+
+            if(
+                link.getAttribute("href")
+                === "#" + current
+            ){
+
+                link.style.color =
+                    "#111";
+
+            }
+
+        });
+
+    }
+);
+
+</script>
+
+</body>
+  </html>
