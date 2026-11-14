@@ -1,20 +1,33 @@
 {
-  "id": "anyway-app",
-  "name": "ANYWAY",
+  "id": "./",
+  "name": "ANYWAY — Studio",
   "short_name": "ANYWAY",
-  "description": "Ideas. Experiments. Creations.",
+  "description": "Anyway. — We make things.",
+  "lang": "ko",
   "start_url": "./",
   "scope": "./",
   "display": "standalone",
   "orientation": "portrait",
-  "background_color": "#ffffff",
-  "theme_color": "#ffffff",
+  "background_color": "#f5f5f3",
+  "theme_color": "#f5f5f3",
   "icons": [
     {
-      "src": "./logo.png",
-      "sizes": "any",
+      "src": "./icon-192.png",
+      "sizes": "192x192",
       "type": "image/png",
       "purpose": "any"
+    },
+    {
+      "src": "./icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "./icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
     }
   ]
 }
