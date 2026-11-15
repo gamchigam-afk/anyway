@@ -1,30 +1,26 @@
+
 <!DOCTYPE html>
 <html lang="ko">
 <head>
 <meta charset="UTF-8">
-
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <meta name="theme-color" content="#f5f5f3">
-
 <meta name="description" content="Anyway. — We make things.">
+
+<link rel="manifest" href="./manifest.json">
+<link rel="apple-touch-icon" href="./icon-192.png">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="ANYWAY">
 
 <title>Anyway. — Studio</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-<link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+KR:wght@400;500;600;700;800&display=swap"
-    rel="stylesheet"
->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+KR:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
 <style>
-
-/* =========================================================
-   RESET
-========================================================= */
-
 *{
     margin:0;
     padding:0;
@@ -38,11 +34,7 @@ html{
 body{
     background:#f5f5f3;
     color:#111;
-    font-family:
-        "Inter",
-        "Noto Sans KR",
-        sans-serif;
-
+    font-family:"Inter","Noto Sans KR",sans-serif;
     overflow-x:hidden;
 }
 
@@ -60,1975 +52,975 @@ button{
     font:inherit;
 }
 
-
-/* =========================================================
-   VARIABLES
-========================================================= */
-
 :root{
-
     --bg:#f5f5f3;
     --text:#111;
     --muted:#777;
     --line:#deded9;
     --soft:#ecece7;
     --white:#fff;
-
     --max:1400px;
-
     --radius:28px;
-
     --ease:cubic-bezier(.2,.8,.2,1);
-
 }
 
-
-/* =========================================================
-   INTRO
-========================================================= */
+/* INTRO */
 
 .intro{
-
     position:fixed;
-
     inset:0;
-
     z-index:99999;
-
     display:flex;
-
     justify-content:center;
-
     align-items:center;
-
     background:#111;
-
     opacity:1;
-
     visibility:visible;
-
-    transition:
-        opacity .7s ease,
-        visibility .7s ease;
-
+    transition:opacity .7s ease,visibility .7s ease;
 }
-
-
-/* 반드시 이 클래스가 붙으면 사라짐 */
 
 .intro.hide{
-
     opacity:0;
-
     visibility:hidden;
-
     pointer-events:none;
-
 }
-
-
-/* 로고 */
 
 .intro-inner{
-
     display:flex;
-
     flex-direction:column;
-
     align-items:center;
-
     justify-content:center;
-
     gap:25px;
-
 }
-
 
 .intro-logo{
-
     width:min(180px,45vw);
-
     max-height:120px;
-
     object-fit:contain;
-
-    filter:
-        brightness(0)
-        invert(1);
-
-    animation:
-        introLogo 1s ease forwards;
-
+    filter:brightness(0) invert(1);
+    animation:introLogo 1s ease forwards;
 }
-
 
 .intro-line{
-
     width:0;
-
     height:1px;
-
     background:#fff;
-
-    animation:
-        introLine .8s .2s ease forwards;
-
+    animation:introLine .8s .2s ease forwards;
 }
-
 
 @keyframes introLogo{
-
     from{
-
         opacity:0;
-
-        transform:
-            translateY(20px)
-            scale(.95);
-
+        transform:translateY(20px) scale(.95);
     }
-
     to{
-
         opacity:1;
-
         transform:none;
-
     }
-
 }
-
 
 @keyframes introLine{
-
-    to{
-
-        width:120px;
-
-    }
-
+    to{width:120px;}
 }
 
-
-/* =========================================================
-   BACKGROUND
-========================================================= */
+/* BACKGROUND */
 
 .bg-grid{
-
     position:fixed;
-
     inset:0;
-
     z-index:-5;
-
     pointer-events:none;
-
     opacity:.38;
-
     background-image:
-
-        linear-gradient(
-            rgba(0,0,0,.035) 1px,
-            transparent 1px
-        ),
-
-        linear-gradient(
-            90deg,
-            rgba(0,0,0,.035) 1px,
-            transparent 1px
-        );
-
+        linear-gradient(rgba(0,0,0,.035) 1px,transparent 1px),
+        linear-gradient(90deg,rgba(0,0,0,.035) 1px,transparent 1px);
     background-size:70px 70px;
-
-    mask-image:
-        linear-gradient(
-            to bottom,
-            black,
-            transparent 80%
-        );
-
+    mask-image:linear-gradient(to bottom,black,transparent 80%);
 }
-
 
 .orb{
-
     position:fixed;
-
     width:420px;
-
     height:420px;
-
     border-radius:50%;
-
     filter:blur(90px);
-
     opacity:.15;
-
     pointer-events:none;
-
     z-index:-4;
-
     background:#aaa;
-
 }
-
 
 .orb.one{
-
     top:-180px;
-
     right:-100px;
-
 }
-
 
 .orb.two{
-
     bottom:-200px;
-
     left:-150px;
-
 }
 
-
-/* =========================================================
-   PROGRESS
-========================================================= */
+/* PROGRESS */
 
 .progress{
-
     position:fixed;
-
     top:0;
-
     left:0;
-
     width:0;
-
     height:3px;
-
     background:#111;
-
     z-index:5000;
-
 }
 
-
-/* =========================================================
-   HEADER
-========================================================= */
+/* HEADER */
 
 header{
-
     position:fixed;
-
     top:0;
-
     left:0;
-
     right:0;
-
     z-index:3000;
-
     height:82px;
-
     display:flex;
-
     align-items:center;
-
-    padding:
-        0
-        clamp(20px,4vw,60px);
-
-    transition:
-        background .35s,
-        backdrop-filter .35s,
-        border .35s;
-
+    padding:0 clamp(20px,4vw,60px);
+    transition:background .35s,backdrop-filter .35s,border .35s;
 }
-
 
 header.scrolled{
-
-    background:
-        rgba(245,245,243,.76);
-
-    backdrop-filter:
-        blur(18px);
-
-    border-bottom:
-        1px solid rgba(0,0,0,.06);
-
+    background:rgba(245,245,243,.76);
+    backdrop-filter:blur(18px);
+    border-bottom:1px solid rgba(0,0,0,.06);
 }
-
 
 .header-inner{
-
     width:100%;
-
     max-width:var(--max);
-
     margin:auto;
-
     display:flex;
-
     justify-content:space-between;
-
     align-items:center;
-
 }
-
 
 .logo-link{
-
     display:flex;
-
     align-items:center;
-
 }
-
 
 .logo{
-
     width:105px;
-
     height:auto;
-
 }
-
 
 .nav{
-
     display:flex;
-
     align-items:center;
-
     gap:28px;
-
 }
-
 
 .nav a{
-
     position:relative;
-
     font-size:12px;
-
     font-weight:600;
-
     color:#555;
-
     transition:.3s;
-
 }
-
 
 .nav a::after{
-
     content:"";
-
     position:absolute;
-
     left:0;
-
     bottom:-6px;
-
     width:0;
-
     height:1px;
-
     background:#111;
-
     transition:.3s;
-
 }
 
+.nav a:hover{color:#111;}
+.nav a:hover::after{width:100%;}
 
-.nav a:hover{
-
-    color:#111;
-
-}
-
-
-.nav a:hover::after{
-
-    width:100%;
-
-}
-
-
-/* =========================================================
-   HERO
-========================================================= */
+/* HERO */
 
 .hero{
-
     min-height:100vh;
-
     display:flex;
-
     align-items:center;
-
-    padding:
-        150px
-        clamp(20px,6vw,90px)
-        100px;
-
+    padding:150px clamp(20px,6vw,90px) 100px;
 }
-
 
 .hero-inner{
-
     width:100%;
-
     max-width:var(--max);
-
     margin:auto;
-
 }
-
 
 .hero-top{
-
     display:flex;
-
     justify-content:space-between;
-
     align-items:flex-end;
-
     margin-bottom:45px;
-
 }
-
 
 .hero-index{
-
     font-size:12px;
-
     color:#888;
-
     letter-spacing:.08em;
-
 }
-
 
 .hero-time{
-
     text-align:right;
-
     font-size:12px;
-
     line-height:1.7;
-
     color:#777;
-
 }
-
 
 .hero-title{
-
-    font-size:
-        clamp(65px,13vw,190px);
-
+    font-size:clamp(65px,13vw,190px);
     line-height:.84;
-
     letter-spacing:-.075em;
-
     font-weight:800;
-
     max-width:1200px;
-
 }
 
-
-.hero-title span{
-
-    display:block;
-
-}
-
+.hero-title span{display:block;}
 
 .hero-title .outline{
-
     color:transparent;
-
-    -webkit-text-stroke:
-        1.5px #111;
-
+    -webkit-text-stroke:1.5px #111;
 }
-
 
 .hero-bottom{
-
     margin-top:75px;
-
     display:flex;
-
     justify-content:space-between;
-
     align-items:flex-end;
-
     gap:40px;
-
 }
-
 
 .hero-description{
-
     max-width:440px;
-
-    font-size:
-        clamp(16px,1.5vw,20px);
-
+    font-size:clamp(16px,1.5vw,20px);
     line-height:1.7;
-
     color:#555;
-
 }
-
 
 .scroll-indicator{
-
     display:flex;
-
     align-items:center;
-
     gap:12px;
-
     font-size:10px;
-
     color:#888;
-
     letter-spacing:.15em;
-
 }
-
 
 .scroll-line{
-
     width:50px;
-
     height:1px;
-
     background:#aaa;
-
 }
 
-
-/* =========================================================
-   COMMON SECTION
-========================================================= */
+/* COMMON SECTION */
 
 .section-inner{
-
     width:100%;
-
     max-width:var(--max);
-
     margin:auto;
-
-    padding:
-        150px
-        clamp(20px,6vw,90px);
-
+    padding:150px clamp(20px,6vw,90px);
 }
-
 
 .section-label{
-
     display:flex;
-
     align-items:center;
-
     gap:15px;
-
     font-size:11px;
-
     color:#888;
-
     letter-spacing:.12em;
-
     margin-bottom:50px;
-
 }
-
 
 .section-label::before{
-
     content:"";
-
     width:30px;
-
     height:1px;
-
     background:#999;
-
 }
-
 
 .section-title{
-
-    font-size:
-        clamp(40px,6vw,90px);
-
+    font-size:clamp(40px,6vw,90px);
     line-height:.95;
-
     letter-spacing:-.055em;
-
     font-weight:700;
-
 }
 
-
-/* =========================================================
-   ABOUT
-========================================================= */
+/* ABOUT */
 
 .about-grid{
-
     display:grid;
-
-    grid-template-columns:
-        1fr 1.5fr;
-
-    gap:
-        clamp(50px,10vw,150px);
-
+    grid-template-columns:1fr 1.5fr;
+    gap:clamp(50px,10vw,150px);
 }
-
 
 .about-main{
-
-    font-size:
-        clamp(24px,3vw,42px);
-
+    font-size:clamp(24px,3vw,42px);
     line-height:1.25;
-
     letter-spacing:-.04em;
-
 }
 
-
-.about-main strong{
-
-    font-weight:700;
-
-}
-
+.about-main strong{font-weight:700;}
 
 .about-description{
-
     color:#666;
-
     font-size:16px;
-
     line-height:1.9;
-
 }
-
 
 .stats{
-
     margin-top:80px;
-
     display:grid;
-
-    grid-template-columns:
-        repeat(3,1fr);
-
-    border-top:
-        1px solid var(--line);
-
+    grid-template-columns:repeat(3,1fr);
+    border-top:1px solid var(--line);
 }
-
 
 .stat{
-
-    padding:
-        25px 20px 25px 0;
-
-    border-right:
-        1px solid var(--line);
-
+    padding:25px 20px 25px 0;
+    border-right:1px solid var(--line);
 }
-
 
 .stat:last-child{
-
     border-right:0;
-
     padding-left:20px;
-
 }
-
 
 .stat-number{
-
     font-size:38px;
-
     font-weight:700;
-
     letter-spacing:-.05em;
-
 }
-
 
 .stat-label{
-
     margin-top:8px;
-
     color:#888;
-
     font-size:11px;
-
 }
 
-
-/* =========================================================
-   PHILOSOPHY
-========================================================= */
+/* PHILOSOPHY */
 
 .philosophy{
-
     background:#111;
-
     color:#fff;
-
 }
 
-
-.philosophy .section-label{
-
-    color:#777;
-
-}
-
-
-.philosophy .section-label::before{
-
-    background:#666;
-
-}
-
+.philosophy .section-label{color:#777;}
+.philosophy .section-label::before{background:#666;}
 
 .philosophy-content{
-
     min-height:650px;
-
     display:flex;
-
     flex-direction:column;
-
     justify-content:center;
-
     gap:35px;
-
 }
-
 
 .philosophy-line{
-
-    font-size:
-        clamp(40px,7vw,100px);
-
+    font-size:clamp(40px,7vw,100px);
     line-height:.95;
-
     letter-spacing:-.06em;
-
     color:#555;
-
-    transition:
-        color .6s,
-        transform .6s;
-
+    transition:color .6s,transform .6s;
 }
-
 
 .philosophy-line.active{
-
     color:#fff;
-
-    transform:
-        translateX(25px);
-
+    transform:translateX(25px);
 }
-
 
 .philosophy-line em{
-
     font-style:normal;
-
     color:#fff;
-
 }
 
+/* WEB HUB */
 
-/* =========================================================
-   WEB HUB
-========================================================= */
-
-.hub-section{
-
-    padding-bottom:160px;
-
-}
-
+.hub-section{padding-bottom:160px;}
 
 .hub-card{
-
     position:relative;
-
     display:block;
-
     overflow:hidden;
-
     min-height:520px;
-
-    padding:
-        clamp(35px,6vw,80px);
-
-    border-radius:
-        var(--radius);
-
+    padding:clamp(35px,6vw,80px);
+    border-radius:var(--radius);
     background:#111;
-
     color:#fff;
-
     cursor:pointer;
-
     transform-style:preserve-3d;
-
-    transition:
-        transform .5s var(--ease);
-
+    transition:transform .5s var(--ease);
 }
-
 
 .hub-card::before{
-
     content:"";
-
     position:absolute;
-
     width:500px;
-
     height:500px;
-
     border-radius:50%;
-
-    background:
-        radial-gradient(
-            circle,
-            rgba(255,255,255,.16),
-            transparent 65%
-        );
-
-    top:
-        var(--mouse-y,50%);
-
-    left:
-        var(--mouse-x,50%);
-
-    transform:
-        translate(-50%,-50%);
-
+    background:radial-gradient(circle,rgba(255,255,255,.16),transparent 65%);
+    top:var(--mouse-y,50%);
+    left:var(--mouse-x,50%);
+    transform:translate(-50%,-50%);
     pointer-events:none;
-
 }
-
 
 .hub-card-content{
-
     position:relative;
-
     z-index:2;
-
     height:100%;
-
     display:flex;
-
     flex-direction:column;
-
     justify-content:space-between;
-
 }
-
 
 .hub-small{
-
     color:#777;
-
     font-size:11px;
-
     letter-spacing:.15em;
-
 }
-
 
 .hub-title{
-
-    font-size:
-        clamp(60px,11vw,150px);
-
+    font-size:clamp(60px,11vw,150px);
     font-weight:800;
-
     letter-spacing:-.08em;
-
     line-height:.8;
-
 }
-
 
 .hub-bottom{
-
     display:flex;
-
     justify-content:space-between;
-
     align-items:flex-end;
-
     margin-top:80px;
-
 }
-
 
 .hub-description{
-
     max-width:450px;
-
     font-size:16px;
-
     line-height:1.7;
-
     color:#aaa;
-
 }
-
 
 .hub-arrow{
-
     font-size:70px;
-
     line-height:1;
-
-    transition:
-        transform .4s var(--ease);
-
+    transition:transform .4s var(--ease);
 }
-
 
 .hub-card:hover .hub-arrow{
-
-    transform:
-        translate(12px,-12px);
-
+    transform:translate(12px,-12px);
 }
 
-
-/* =========================================================
-   NEWS
-========================================================= */
+/* NEWS */
 
 .news-list{
-
     margin-top:70px;
-
-    border-top:
-        1px solid var(--line);
-
+    border-top:1px solid var(--line);
 }
-
 
 .news-item{
-
     display:grid;
-
-    grid-template-columns:
-        120px 1fr 40px;
-
+    grid-template-columns:120px 1fr 40px;
     gap:30px;
-
     align-items:center;
-
     padding:30px 0;
-
-    border-bottom:
-        1px solid var(--line);
-
-    transition:
-        padding .35s,
-        background .35s;
-
+    border-bottom:1px solid var(--line);
+    transition:padding .35s,background .35s;
 }
-
 
 .news-item:hover{
-
     padding-left:20px;
-
     padding-right:20px;
-
 }
-
 
 .news-date{
-
     font-size:11px;
-
     color:#999;
-
 }
-
 
 .news-title{
-
-    font-size:
-        clamp(17px,2vw,24px);
-
+    font-size:clamp(17px,2vw,24px);
     letter-spacing:-.03em;
-
 }
-
 
 .news-type{
-
     font-size:10px;
-
     color:#999;
-
     margin-top:6px;
-
 }
 
+.news-arrow{font-size:18px;}
 
-.news-arrow{
-
-    font-size:18px;
-
-}
-
-
-/* =========================================================
-   LAB
-========================================================= */
+/* LAB */
 
 .lab-grid{
-
     margin-top:70px;
-
     display:grid;
-
-    grid-template-columns:
-        repeat(3,1fr);
-
+    grid-template-columns:repeat(3,1fr);
     gap:18px;
-
 }
-
 
 .lab-card{
-
     min-height:280px;
-
     padding:30px;
-
-    border:
-        1px solid var(--line);
-
+    border:1px solid var(--line);
     border-radius:22px;
-
     display:flex;
-
     flex-direction:column;
-
     justify-content:space-between;
-
-    transition:
-        transform .4s var(--ease),
-        background .4s;
-
+    transition:transform .4s var(--ease),background .4s;
 }
-
 
 .lab-card:hover{
-
-    transform:
-        translateY(-8px);
-
+    transform:translateY(-8px);
     background:#fff;
-
 }
-
 
 .lab-number{
-
     color:#999;
-
     font-size:11px;
-
 }
-
 
 .lab-title{
-
     font-size:25px;
-
     font-weight:600;
-
     letter-spacing:-.04em;
-
 }
-
 
 .lab-status{
-
     display:inline-block;
-
     width:max-content;
-
     padding:6px 10px;
-
     border-radius:50px;
-
     background:#e8e8e3;
-
     color:#777;
-
     font-size:9px;
-
     letter-spacing:.08em;
-
 }
 
+/* CONTACT */
 
-/* =========================================================
-   CONTACT
-========================================================= */
-
-.contact{
-
-    background:#e9e9e4;
-
-}
-
+.contact{background:#e9e9e4;}
 
 .contact-inner{
-
     min-height:650px;
-
     display:flex;
-
     flex-direction:column;
-
     justify-content:center;
-
 }
-
 
 .contact-title{
-
-    font-size:
-        clamp(65px,11vw,150px);
-
+    font-size:clamp(65px,11vw,150px);
     line-height:.82;
-
     letter-spacing:-.075em;
-
     font-weight:800;
-
 }
-
 
 .contact-text{
-
     max-width:500px;
-
     margin-top:50px;
-
     color:#666;
-
     line-height:1.8;
-
     font-size:16px;
-
 }
-
 
 .contact-email{
-
     display:inline-flex;
-
     align-items:center;
-
     gap:18px;
-
     width:max-content;
-
     margin-top:45px;
-
     padding-bottom:12px;
-
-    border-bottom:
-        1px solid #111;
-
-    font-size:
-        clamp(17px,2vw,24px);
-
+    border-bottom:1px solid #111;
+    font-size:clamp(17px,2vw,24px);
     font-weight:600;
-
-    transition:
-        opacity .3s;
-
+    transition:opacity .3s;
 }
 
+.contact-email span{transition:transform .35s var(--ease);}
+.contact-email:hover{opacity:.55;}
+.contact-email:hover span{transform:translate(6px,-6px);}
 
-.contact-email span{
-
-    transition:
-        transform .35s var(--ease);
-
-}
-
-
-.contact-email:hover{
-
-    opacity:.55;
-
-}
-
-
-.contact-email:hover span{
-
-    transform:
-        translate(6px,-6px);
-
-}
-
-
-/* =========================================================
-   FOOTER
-========================================================= */
+/* FOOTER */
 
 footer{
-
     background:#111;
-
     color:#fff;
-
-    padding:
-        60px
-        clamp(20px,6vw,90px);
-
+    padding:60px clamp(20px,6vw,90px);
 }
-
 
 .footer-inner{
-
     max-width:var(--max);
-
     margin:auto;
-
     display:flex;
-
     justify-content:space-between;
-
     align-items:flex-end;
-
 }
-
 
 .footer-logo{
-
     width:100px;
-
-    filter:
-        brightness(0)
-        invert(1);
-
+    filter:brightness(0) invert(1);
 }
-
 
 .footer-right{
-
     text-align:right;
-
     color:#777;
-
     font-size:10px;
-
     line-height:1.8;
-
 }
 
-
-/* =========================================================
-   REVEAL
-========================================================= */
+/* REVEAL */
 
 .reveal{
-
     opacity:0;
-
-    transform:
-        translateY(35px);
-
-    transition:
-        opacity .9s var(--ease),
-        transform .9s var(--ease);
-
+    transform:translateY(35px);
+    transition:opacity .9s var(--ease),transform .9s var(--ease);
 }
-
 
 .reveal.show{
-
     opacity:1;
-
     transform:none;
-
 }
 
+.delay-1{transition-delay:.08s;}
+.delay-2{transition-delay:.16s;}
+.delay-3{transition-delay:.24s;}
 
-.delay-1{
-
-    transition-delay:.08s;
-
-}
-
-
-.delay-2{
-
-    transition-delay:.16s;
-
-}
-
-
-.delay-3{
-
-    transition-delay:.24s;
-
-}
-
-
-/* =========================================================
-   CURSOR
-========================================================= */
+/* CURSOR */
 
 .cursor{
-
     position:fixed;
-
     width:14px;
-
     height:14px;
-
     border-radius:50%;
-
     background:#111;
-
     pointer-events:none;
-
     z-index:10000;
-
-    transform:
-        translate(-50%,-50%);
-
+    transform:translate(-50%,-50%);
     mix-blend-mode:difference;
-
 }
-
 
 .cursor.big{
-
     width:45px;
-
     height:45px;
-
 }
 
+/* PWA INSTALL BUTTON */
 
-/* =========================================================
-   MOBILE
-========================================================= */
+.install-app{
+    position:fixed;
+    right:24px;
+    bottom:24px;
+    z-index:8000;
+    display:none;
+    align-items:center;
+    gap:12px;
+    padding:14px 20px;
+    border:1px solid #222;
+    border-radius:50px;
+    background:#111;
+    color:#fff;
+    font-size:11px;
+    font-weight:600;
+    letter-spacing:.08em;
+    cursor:pointer;
+    box-shadow:0 8px 30px rgba(0,0,0,.12);
+    transition:transform .3s,background .3s;
+}
+
+.install-app.visible{display:flex;}
+
+.install-app:hover{
+    transform:translateY(-4px);
+    background:#333;
+}
+
+.install-app span{font-size:17px;}
+
+/* MOBILE */
 
 @media(max-width:800px){
-
-    header{
-
-        height:70px;
-
-    }
-
-
-    .logo{
-
-        width:90px;
-
-    }
-
-
-    .nav{
-
-        gap:12px;
-
-    }
-
-
-    .nav a{
-
-        font-size:9px;
-
-    }
-
+    header{height:70px;}
+    .logo{width:90px;}
+    .nav{gap:12px;}
+    .nav a{font-size:9px;}
 
     .hero{
-
         min-height:90vh;
-
         padding-top:120px;
-
     }
 
-
-    .hero-top{
-
-        align-items:flex-start;
-
-    }
-
-
-    .hero-time{
-
-        font-size:9px;
-
-    }
-
+    .hero-top{align-items:flex-start;}
+    .hero-time{font-size:9px;}
 
     .hero-bottom{
-
         flex-direction:column;
-
         align-items:flex-start;
-
         margin-top:55px;
-
     }
 
-
-    .scroll-indicator{
-
-        display:none;
-
-    }
-
+    .scroll-indicator{display:none;}
 
     .section-inner{
-
         padding-top:100px;
-
         padding-bottom:100px;
-
     }
-
 
     .about-grid{
-
         grid-template-columns:1fr;
-
         gap:60px;
-
     }
 
+    .stats{margin-top:50px;}
+    .stat-number{font-size:28px;}
+    .stat-label{font-size:9px;}
 
-    .stats{
-
-        margin-top:50px;
-
-    }
-
-
-    .stat-number{
-
-        font-size:28px;
-
-    }
-
-
-    .stat-label{
-
-        font-size:9px;
-
-    }
-
-
-    .philosophy-content{
-
-        min-height:500px;
-
-    }
-
+    .philosophy-content{min-height:500px;}
 
     .philosophy-line.active{
-
-        transform:
-            translateX(10px);
-
+        transform:translateX(10px);
     }
 
-
-    .hub-card{
-
-        min-height:430px;
-
-    }
-
+    .hub-card{min-height:430px;}
 
     .hub-bottom{
-
         flex-direction:column;
-
         align-items:flex-start;
-
         gap:30px;
-
         margin-top:60px;
-
     }
 
-
-    .hub-arrow{
-
-        font-size:50px;
-
-    }
-
+    .hub-arrow{font-size:50px;}
 
     .news-item{
-
-        grid-template-columns:
-            65px 1fr 20px;
-
+        grid-template-columns:65px 1fr 20px;
         gap:12px;
-
     }
-
 
     .news-item:hover{
-
         padding-left:8px;
-
         padding-right:8px;
-
     }
 
-
-    .lab-grid{
-
-        grid-template-columns:1fr;
-
-    }
-
-
-    .lab-card{
-
-        min-height:220px;
-
-    }
-
-
-    .contact-inner{
-
-        min-height:550px;
-
-    }
-
+    .lab-grid{grid-template-columns:1fr;}
+    .lab-card{min-height:220px;}
+    .contact-inner{min-height:550px;}
 
     .footer-inner{
-
         flex-direction:column;
-
         align-items:flex-start;
-
         gap:30px;
-
     }
 
+    .footer-right{text-align:left;}
+    .cursor{display:none;}
 
-    .footer-right{
-
-        text-align:left;
-
+    .install-app{
+        right:16px;
+        bottom:16px;
+        padding:12px 16px;
+        font-size:10px;
     }
-
-
-    .cursor{
-
-        display:none;
-
-    }
-
 }
 
-
-/* =========================================================
-   REDUCED MOTION
-========================================================= */
+/* REDUCED MOTION */
 
 @media(prefers-reduced-motion:reduce){
-
     *{
-
         scroll-behavior:auto !important;
-
         animation-duration:.01ms !important;
-
         transition-duration:.01ms !important;
-
     }
 
     .reveal{
-
         opacity:1;
-
         transform:none;
-
     }
-
 }
-
 </style>
 </head>
 
-
 <body id="top">
 
-
-<!-- =======================================================
-     INTRO
-======================================================= -->
-
+<!-- INTRO -->
 <div class="intro" id="intro">
-
     <div class="intro-inner">
-
         <img
             src="logo.png"
             class="intro-logo"
             alt="Anyway."
             onerror="this.style.display='none';"
         >
-
         <div class="intro-line"></div>
-
     </div>
-
 </div>
 
-
 <div class="bg-grid"></div>
-
 <div class="orb one"></div>
-
 <div class="orb two"></div>
 
+<div class="progress" id="progress"></div>
 
-<div
-    class="progress"
-    id="progress"
-></div>
+<button
+    class="install-app"
+    id="installApp"
+    type="button"
+>
+    INSTALL ANYWAY
+    <span>↗</span>
+</button>
 
+<div class="cursor" id="cursor"></div>
 
-<div
-    class="cursor"
-    id="cursor"
-></div>
-
-
-<!-- =======================================================
-     HEADER
-======================================================= -->
-
+<!-- HEADER -->
 <header id="header">
-
     <div class="header-inner">
 
-        <a
-            href="#top"
-            class="logo-link"
-            aria-label="맨 위로"
-        >
-
+        <a href="#top" class="logo-link" aria-label="맨 위로">
             <img
                 src="logo.png"
                 class="logo"
                 alt="Anyway."
                 onerror="this.style.display='none';"
             >
-
         </a>
 
-
         <nav class="nav">
-
-            <a href="#about">
-                ABOUT
-            </a>
-
-            <a href="#philosophy">
-                PHILOSOPHY
-            </a>
-
-            <a href="#news">
-                NEWS
-            </a>
-
-            <a href="#lab">
-                LAB
-            </a>
-
-            <a href="#contact">
-                CONTACT
-            </a>
-
+            <a href="#about">ABOUT</a>
+            <a href="#philosophy">PHILOSOPHY</a>
+            <a href="#news">NEWS</a>
+            <a href="#lab">LAB</a>
+            <a href="#contact">CONTACT</a>
         </nav>
 
     </div>
-
 </header>
-
-
-<!-- =======================================================
-     MAIN
-======================================================= -->
 
 <main>
 
-
 <!-- HERO -->
-
 <section class="hero">
-
     <div class="hero-inner">
 
         <div class="hero-top reveal">
-
-            <div class="hero-index">
-                ANYWAY / STUDIO
-            </div>
+            <div class="hero-index">ANYWAY / STUDIO</div>
 
             <div class="hero-time">
-
-                <div id="date">
-                    2026. 09. 30
-                </div>
-
-                <div id="time">
-                    00:00:00
-                </div>
-
+                <div id="date">2026. 09. 30</div>
+                <div id="time">00:00:00</div>
             </div>
-
         </div>
 
-
         <h1 class="hero-title reveal delay-1">
-
-            <span>
-                Anyway.
-            </span>
-
-            <span class="outline">
-                We make.
-            </span>
-
+            <span>Anyway.</span>
+            <span class="outline">We make.</span>
         </h1>
-
 
         <div class="hero-bottom reveal delay-2">
 
             <p class="hero-description">
-
                 아이디어를 만들고,
                 실험하고,
                 직접 구현합니다.
-
                 <br><br>
-
                 작지만 재미있는 것부터
                 새로운 경험까지.
-
             </p>
 
-
             <div class="scroll-indicator">
-
                 SCROLL
-
                 <span class="scroll-line"></span>
-
             </div>
 
         </div>
 
     </div>
-
 </section>
 
-
 <!-- ABOUT -->
-
 <section id="about">
-
     <div class="section-inner">
 
-        <div class="section-label reveal">
-            01 — ABOUT
-        </div>
-
+        <div class="section-label reveal">01 — ABOUT</div>
 
         <div class="about-grid">
 
             <div class="about-main reveal">
-
-                <strong>
-                    Anyway.
-                </strong>
-
+                <strong>Anyway.</strong>
                 는
-
                 <br>
-
                 생각을
                 실제로
                 만드는 곳입니다.
-
             </div>
-
 
             <div class="reveal delay-1">
 
                 <p class="about-description">
-
                     웹사이트부터 게임,
                     실험적인 인터랙션까지.
-
                     <br><br>
-
                     완성된 답을 찾는 것보다
                     직접 만들면서 새로운 가능성을
                     찾아가는 것을 중요하게 생각합니다.
-
                     <br><br>
-
                     작은 프로젝트도 하나의
                     경험이 될 수 있다고 생각합니다.
-
                 </p>
-
 
                 <div class="stats">
 
                     <div class="stat">
-
-                        <div class="stat-number">
-                            01
-                        </div>
-
-                        <div class="stat-label">
-                            IDEA
-                        </div>
-
+                        <div class="stat-number">01</div>
+                        <div class="stat-label">IDEA</div>
                     </div>
 
-
                     <div class="stat">
-
-                        <div class="stat-number">
-                            02
-                        </div>
-
-                        <div class="stat-label">
-                            BUILD
-                        </div>
-
+                        <div class="stat-number">02</div>
+                        <div class="stat-label">BUILD</div>
                     </div>
 
-
                     <div class="stat">
-
-                        <div class="stat-number">
-                            ∞
-                        </div>
-
-                        <div class="stat-label">
-                            EXPERIMENT
-                        </div>
-
+                        <div class="stat-number">∞</div>
+                        <div class="stat-label">EXPERIMENT</div>
                     </div>
 
                 </div>
 
             </div>
-
         </div>
-
     </div>
-
 </section>
-
 
 <!-- PHILOSOPHY -->
-
-<section
-    class="philosophy"
-    id="philosophy"
->
-
+<section class="philosophy" id="philosophy">
     <div class="section-inner">
 
-        <div class="section-label reveal">
-            02 — PHILOSOPHY
-        </div>
-
+        <div class="section-label reveal">02 — PHILOSOPHY</div>
 
         <div class="philosophy-content">
-
+            <div class="philosophy-line">Think.</div>
+            <div class="philosophy-line">Make.</div>
+            <div class="philosophy-line">Break.</div>
             <div class="philosophy-line">
-                Think.
+                <em>Make it again.</em>
             </div>
-
-            <div class="philosophy-line">
-                Make.
-            </div>
-
-            <div class="philosophy-line">
-                Break.
-            </div>
-
-            <div class="philosophy-line">
-                <em>
-                    Make it again.
-                </em>
-            </div>
-
         </div>
 
     </div>
-
 </section>
 
-
 <!-- WEB HUB -->
-
 <section class="hub-section">
-
     <div class="section-inner">
 
-        <div class="section-label reveal">
-            03 — WEB HUB
-        </div>
-
+        <div class="section-label reveal">03 — WEB HUB</div>
 
         <a
             href="https://gamchigam-afk.github.io/web-hub/"
@@ -2044,303 +1036,154 @@ footer{
                     ALL PROJECTS / ONE PLACE
                 </div>
 
-
                 <div class="hub-title">
-
                     WEB<br>
                     HUB.
-
                 </div>
-
 
                 <div class="hub-bottom">
 
                     <p class="hub-description">
-
                         Anyway에서 만들어진
                         다양한 프로젝트를 한곳에서
                         확인할 수 있습니다.
-
                         <br><br>
-
                         게임부터 실험적인 웹 프로젝트까지
                         계속해서 추가됩니다.
-
                     </p>
 
-
-                    <div class="hub-arrow">
-                        ↗
-                    </div>
+                    <div class="hub-arrow">↗</div>
 
                 </div>
-
             </div>
-
         </a>
 
     </div>
-
 </section>
 
-
 <!-- NEWS -->
-
 <section id="news">
-
     <div class="section-inner">
 
-        <div class="section-label reveal">
-            04 — NEWS
-        </div>
-
+        <div class="section-label reveal">04 — NEWS</div>
 
         <h2 class="section-title reveal">
             What's<br>
             happening.
         </h2>
 
-
         <div class="news-list">
 
             <div class="news-item reveal">
-
-                <div class="news-date">
-                    2026
-                </div>
-
+                <div class="news-date">2026</div>
                 <div>
-
-                    <div class="news-title">
-                        Anyway. 시작
-                    </div>
-
-                    <div class="news-type">
-                        STUDIO
-                    </div>
-
+                    <div class="news-title">Anyway. 시작</div>
+                    <div class="news-type">STUDIO</div>
                 </div>
-
-                <div class="news-arrow">
-                    ↗
-                </div>
-
+                <div class="news-arrow">↗</div>
             </div>
-
 
             <div class="news-item reveal delay-1">
-
-                <div class="news-date">
-                    NOW
-                </div>
-
+                <div class="news-date">NOW</div>
                 <div>
-
-                    <div class="news-title">
-                        새로운 웹 프로젝트 개발
-                    </div>
-
-                    <div class="news-type">
-                        DEVELOPMENT
-                    </div>
-
+                    <div class="news-title">새로운 웹 프로젝트 개발</div>
+                    <div class="news-type">DEVELOPMENT</div>
                 </div>
-
-                <div class="news-arrow">
-                    ↗
-                </div>
-
+                <div class="news-arrow">↗</div>
             </div>
-
 
             <div class="news-item reveal delay-2">
-
-                <div class="news-date">
-                    NEXT
-                </div>
-
+                <div class="news-date">NEXT</div>
                 <div>
-
-                    <div class="news-title">
-                        계속해서 새로운 것을 만듭니다.
-                    </div>
-
-                    <div class="news-type">
-                        FUTURE
-                    </div>
-
+                    <div class="news-title">계속해서 새로운 것을 만듭니다.</div>
+                    <div class="news-type">FUTURE</div>
                 </div>
-
-                <div class="news-arrow">
-                    ↗
-                </div>
-
+                <div class="news-arrow">↗</div>
             </div>
 
         </div>
-
     </div>
-
 </section>
 
-
 <!-- LAB -->
-
 <section id="lab">
-
     <div class="section-inner">
 
-        <div class="section-label reveal">
-            05 — LAB
-        </div>
-
+        <div class="section-label reveal">05 — LAB</div>
 
         <h2 class="section-title reveal">
             Things<br>
             we're testing.
         </h2>
 
-
         <div class="lab-grid">
 
-
             <div class="lab-card reveal">
-
-                <div class="lab-number">
-                    LAB / 001
-                </div>
-
+                <div class="lab-number">LAB / 001</div>
                 <div>
-
-                    <div class="lab-title">
-                        Web Experiments
-                    </div>
-
+                    <div class="lab-title">Web Experiments</div>
                     <br>
-
-                    <span class="lab-status">
-                        EXPERIMENT
-                    </span>
-
+                    <span class="lab-status">EXPERIMENT</span>
                 </div>
-
             </div>
-
 
             <div class="lab-card reveal delay-1">
-
-                <div class="lab-number">
-                    LAB / 002
-                </div>
-
+                <div class="lab-number">LAB / 002</div>
                 <div>
-
-                    <div class="lab-title">
-                        Interactive UI
-                    </div>
-
+                    <div class="lab-title">Interactive UI</div>
                     <br>
-
-                    <span class="lab-status">
-                        TESTING
-                    </span>
-
+                    <span class="lab-status">TESTING</span>
                 </div>
-
             </div>
-
 
             <div class="lab-card reveal delay-2">
-
-                <div class="lab-number">
-                    LAB / 003
-                </div>
-
+                <div class="lab-number">LAB / 003</div>
                 <div>
-
-                    <div class="lab-title">
-                        Game Ideas
-                    </div>
-
+                    <div class="lab-title">Game Ideas</div>
                     <br>
-
-                    <span class="lab-status">
-                        IN DEVELOPMENT
-                    </span>
-
+                    <span class="lab-status">IN DEVELOPMENT</span>
                 </div>
-
             </div>
 
-
         </div>
-
     </div>
-
 </section>
 
-
 <!-- CONTACT -->
-
-<section
-    class="contact"
-    id="contact"
->
-
+<section class="contact" id="contact">
     <div class="section-inner contact-inner">
 
-        <div class="section-label reveal">
-            06 — CONTACT
-        </div>
-
+        <div class="section-label reveal">06 — CONTACT</div>
 
         <h2 class="contact-title reveal delay-1">
-
             Let's make<br>
             something.
-
         </h2>
 
-
         <p class="contact-text reveal delay-2">
-
             새로운 아이디어,
             프로젝트 제안,
             피드백 등
-
             <br>
-
             Anyway.에 연락하고 싶다면
             아래 이메일을 이용해주세요.
-
         </p>
-
 
         <a
             href="mailto:gamchigam@gmail.com"
             class="contact-email reveal delay-3"
         >
-
             gamchigam@gmail.com
-
-            <span>
-                ↗
-            </span>
-
+            <span>↗</span>
         </a>
 
     </div>
-
 </section>
-
 
 </main>
 
-
 <!-- FOOTER -->
-
 <footer>
-
     <div class="footer-inner">
 
         <img
@@ -2350,664 +1193,358 @@ footer{
             onerror="this.style.display='none';"
         >
 
-
         <div class="footer-right">
-
             ANYWAY. STUDIO
-
             <br>
-
             © 2026 Anyway. All rights reserved.
-
         </div>
 
     </div>
-
 </footer>
 
-
 <script>
+/* INTRO */
 
-/* =========================================================
-   INTRO FIX
-   로고 로딩과 관계없이 반드시 페이지로 진입
-========================================================= */
-
-const intro =
-    document.getElementById("intro");
-
-
+const intro = document.getElementById("intro");
 let introClosed = false;
 
-
 function closeIntro(){
-
     if(introClosed) return;
-
     introClosed = true;
-
     intro.classList.add("hide");
-
 }
 
+document.addEventListener("DOMContentLoaded",()=>{
+    setTimeout(closeIntro,1300);
+});
 
-/*
-   1. 페이지가 준비되면 1.3초 후 닫기
-*/
+setTimeout(closeIntro,2500);
 
-document.addEventListener(
-    "DOMContentLoaded",
-    () => {
-
-        setTimeout(
-            closeIntro,
-            1300
-        );
-
-    }
-);
+window.addEventListener("load",()=>{
+    setTimeout(closeIntro,500);
+});
 
 
-/*
-   2. 만약 DOMContentLoaded 문제가 생겨도
-   최대 2.5초 후 강제 종료
-*/
-
-setTimeout(
-    closeIntro,
-    2500
-);
-
-
-/*
-   3. window load 이후에도 다시 확인
-*/
-
-window.addEventListener(
-    "load",
-    () => {
-
-        setTimeout(
-            closeIntro,
-            500
-        );
-
-    }
-);
-
-
-/* =========================================================
-   CLOCK
-========================================================= */
+/* CLOCK */
 
 function updateClock(){
 
-    const now =
-        new Date();
+    const now = new Date();
 
+    const year = now.getFullYear();
+    const month = String(now.getMonth()+1).padStart(2,"0");
+    const day = String(now.getDate()).padStart(2,"0");
 
-    const year =
-        now.getFullYear();
+    const hours = String(now.getHours()).padStart(2,"0");
+    const minutes = String(now.getMinutes()).padStart(2,"0");
+    const seconds = String(now.getSeconds()).padStart(2,"0");
 
-
-    const month =
-        String(
-            now.getMonth()+1
-        ).padStart(2,"0");
-
-
-    const day =
-        String(
-            now.getDate()
-        ).padStart(2,"0");
-
-
-    const hours =
-        String(
-            now.getHours()
-        ).padStart(2,"0");
-
-
-    const minutes =
-        String(
-            now.getMinutes()
-        ).padStart(2,"0");
-
-
-    const seconds =
-        String(
-            now.getSeconds()
-        ).padStart(2,"0");
-
-
-    document
-        .getElementById("date")
-        .textContent =
+    document.getElementById("date").textContent =
         `${year}. ${month}. ${day}`;
 
-
-    document
-        .getElementById("time")
-        .textContent =
+    document.getElementById("time").textContent =
         `${hours}:${minutes}:${seconds}`;
-
 }
 
-
 updateClock();
+setInterval(updateClock,1000);
 
 
-setInterval(
-    updateClock,
-    1000
-);
-
-
-/* =========================================================
-   SCROLL PROGRESS
-========================================================= */
+/* SCROLL PROGRESS */
 
 function updateProgress(){
 
-    const scrollTop =
-        window.scrollY;
-
+    const scrollTop = window.scrollY;
 
     const height =
-        document.documentElement.scrollHeight
-        - window.innerHeight;
-
+        document.documentElement.scrollHeight -
+        window.innerHeight;
 
     const progress =
-        height > 0
-        ? (
-            scrollTop / height
-        ) * 100
-        : 0;
+        height > 0 ? (scrollTop / height) * 100 : 0;
 
-
-    document
-        .getElementById("progress")
-        .style.width =
+    document.getElementById("progress").style.width =
         progress + "%";
-
 }
 
-
-window.addEventListener(
-    "scroll",
-    updateProgress,
-    {
-        passive:true
-    }
-);
+window.addEventListener("scroll",updateProgress,{passive:true});
 
 
-/* =========================================================
-   HEADER
-========================================================= */
+/* HEADER */
 
-const header =
-    document.getElementById("header");
-
+const header = document.getElementById("header");
 
 function updateHeader(){
-
-    if(
-        window.scrollY > 30
-    ){
-
-        header.classList.add(
-            "scrolled"
-        );
-
-    }else{
-
-        header.classList.remove(
-            "scrolled"
-        );
-
-    }
-
+    header.classList.toggle("scrolled",window.scrollY > 30);
 }
 
-
-window.addEventListener(
-    "scroll",
-    updateHeader,
-    {
-        passive:true
-    }
-);
+window.addEventListener("scroll",updateHeader,{passive:true});
 
 
-/* =========================================================
-   REVEAL
-========================================================= */
+/* REVEAL */
 
-const revealObserver =
-    new IntersectionObserver(
+const revealObserver = new IntersectionObserver(entries=>{
 
-        entries => {
+    entries.forEach(entry=>{
 
-            entries.forEach(
-                entry => {
+        if(entry.isIntersecting){
 
-                    if(
-                        entry.isIntersecting
-                    ){
+            entry.target.classList.add("show");
 
-                        entry.target
-                            .classList
-                            .add("show");
-
-                        revealObserver
-                            .unobserve(
-                                entry.target
-                            );
-
-                    }
-
-                }
-            );
-
-        },
-
-        {
-            threshold:.08
+            revealObserver.unobserve(entry.target);
         }
 
-    );
+    });
+
+},{threshold:.08});
+
+document.querySelectorAll(".reveal").forEach(element=>{
+    revealObserver.observe(element);
+});
 
 
-document
-    .querySelectorAll(".reveal")
-    .forEach(
-        element => {
-
-            revealObserver.observe(
-                element
-            );
-
-        }
-    );
-
-
-/* =========================================================
-   PHILOSOPHY
-========================================================= */
+/* PHILOSOPHY */
 
 const philosophyLines =
-    document.querySelectorAll(
-        ".philosophy-line"
-    );
-
+    document.querySelectorAll(".philosophy-line");
 
 function philosophyScroll(){
 
-    const center =
-        window.innerHeight / 2;
+    const center = window.innerHeight / 2;
 
+    philosophyLines.forEach(line=>{
 
-    philosophyLines.forEach(
-        line => {
+        const rect = line.getBoundingClientRect();
 
-            const rect =
-                line.getBoundingClientRect();
+        const lineCenter = rect.top + rect.height / 2;
 
+        const distance = Math.abs(center-lineCenter);
 
-            const lineCenter =
-                rect.top
-                +
-                rect.height / 2;
+        line.classList.toggle("active",distance < 180);
 
-
-            const distance =
-                Math.abs(
-                    center -
-                    lineCenter
-                );
-
-
-            if(
-                distance < 180
-            ){
-
-                line.classList.add(
-                    "active"
-                );
-
-            }else{
-
-                line.classList.remove(
-                    "active"
-                );
-
-            }
-
-        }
-    );
-
+    });
 }
 
-
-window.addEventListener(
-    "scroll",
-    philosophyScroll,
-    {
-        passive:true
-    }
-);
-
-
+window.addEventListener("scroll",philosophyScroll,{passive:true});
 philosophyScroll();
 
 
-/* =========================================================
-   WEB HUB MOUSE EFFECT
-========================================================= */
+/* WEB HUB MOUSE EFFECT */
 
-const hubCard =
-    document.getElementById(
-        "hubCard"
-    );
+const hubCard = document.getElementById("hubCard");
 
+if(window.matchMedia("(pointer:fine)").matches){
 
-if(
-    window.matchMedia(
-        "(pointer:fine)"
-    ).matches
-){
+    hubCard.addEventListener("mousemove",event=>{
 
-    hubCard.addEventListener(
-        "mousemove",
-        event => {
+        const rect = hubCard.getBoundingClientRect();
 
-            const rect =
-                hubCard.getBoundingClientRect();
+        const x = event.clientX-rect.left;
+        const y = event.clientY-rect.top;
 
+        const px = (x/rect.width)*100;
+        const py = (y/rect.height)*100;
 
-            const x =
-                event.clientX -
-                rect.left;
+        const rotateX = ((y/rect.height)-.5)*-5;
+        const rotateY = ((x/rect.width)-.5)*5;
 
+        hubCard.style.setProperty("--mouse-x",px+"%");
+        hubCard.style.setProperty("--mouse-y",py+"%");
 
-            const y =
-                event.clientY -
-                rect.top;
+        hubCard.style.transform =
+            `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.01)`;
 
+    });
 
-            const px =
-                (x / rect.width)
-                * 100;
-
-
-            const py =
-                (y / rect.height)
-                * 100;
-
-
-            const rotateX =
-                (
-                    (y / rect.height)
-                    - .5
-                )
-                * -5;
-
-
-            const rotateY =
-                (
-                    (x / rect.width)
-                    - .5
-                )
-                * 5;
-
-
-            hubCard.style
-                .setProperty(
-                    "--mouse-x",
-                    px + "%"
-                );
-
-
-            hubCard.style
-                .setProperty(
-                    "--mouse-y",
-                    py + "%"
-                );
-
-
-            hubCard.style.transform =
-                `perspective(1000px)
-                 rotateX(${rotateX}deg)
-                 rotateY(${rotateY}deg)
-                 scale(1.01)`;
-
-        }
-    );
-
-
-    hubCard.addEventListener(
-        "mouseleave",
-        () => {
-
-            hubCard.style.transform =
-                "";
-
-        }
-    );
+    hubCard.addEventListener("mouseleave",()=>{
+        hubCard.style.transform = "";
+    });
 
 }
 
 
-/* =========================================================
-   CUSTOM CURSOR
-========================================================= */
+/* CUSTOM CURSOR */
 
-const cursor =
-    document.getElementById(
-        "cursor"
-    );
+const cursor = document.getElementById("cursor");
 
-
-if(
-    window.matchMedia(
-        "(pointer:fine)"
-    ).matches
-){
+if(window.matchMedia("(pointer:fine)").matches){
 
     let mouseX = 0;
-
     let mouseY = 0;
-
     let currentX = 0;
-
     let currentY = 0;
 
-
-    window.addEventListener(
-        "mousemove",
-        event => {
-
-            mouseX =
-                event.clientX;
-
-            mouseY =
-                event.clientY;
-
-        }
-    );
-
+    window.addEventListener("mousemove",event=>{
+        mouseX = event.clientX;
+        mouseY = event.clientY;
+    });
 
     function cursorLoop(){
 
-        currentX +=
-            (
-                mouseX -
-                currentX
-            ) * .18;
+        currentX += (mouseX-currentX)*.18;
+        currentY += (mouseY-currentY)*.18;
 
+        cursor.style.left = currentX+"px";
+        cursor.style.top = currentY+"px";
 
-        currentY +=
-            (
-                mouseY -
-                currentY
-            ) * .18;
-
-
-        cursor.style.left =
-            currentX + "px";
-
-
-        cursor.style.top =
-            currentY + "px";
-
-
-        requestAnimationFrame(
-            cursorLoop
-        );
-
+        requestAnimationFrame(cursorLoop);
     }
-
 
     cursorLoop();
 
+    document.querySelectorAll("a").forEach(link=>{
 
-    document
-        .querySelectorAll("a")
-        .forEach(
-            link => {
+        link.addEventListener("mouseenter",()=>{
+            cursor.classList.add("big");
+        });
 
-                link.addEventListener(
-                    "mouseenter",
-                    () => {
+        link.addEventListener("mouseleave",()=>{
+            cursor.classList.remove("big");
+        });
 
-                        cursor.classList.add(
-                            "big"
-                        );
-
-                    }
-                );
-
-
-                link.addEventListener(
-                    "mouseleave",
-                    () => {
-
-                        cursor.classList.remove(
-                            "big"
-                        );
-
-                    }
-                );
-
-            }
-        );
+    });
 
 }
 
 
-/* =========================================================
-   SMOOTH ANCHOR
-========================================================= */
+/* SMOOTH ANCHOR */
 
-document
-    .querySelectorAll(
-        'a[href^="#"]'
-    )
-    .forEach(
-        link => {
+document.querySelectorAll('a[href^="#"]').forEach(link=>{
 
-            link.addEventListener(
-                "click",
-                event => {
+    link.addEventListener("click",event=>{
 
-                    const target =
-                        document.querySelector(
-                            link.getAttribute(
-                                "href"
-                            )
-                        );
+        const target = document.querySelector(
+            link.getAttribute("href")
+        );
 
+        if(!target) return;
 
-                    if(!target){
+        event.preventDefault();
 
-                        return;
+        target.scrollIntoView({
+            behavior:"smooth"
+        });
 
-                    }
+    });
+
+});
 
 
-                    event.preventDefault();
+/* BACKGROUND PARALLAX */
+
+const orbOne = document.querySelector(".orb.one");
+const orbTwo = document.querySelector(".orb.two");
+
+window.addEventListener("scroll",()=>{
+
+    const y = window.scrollY;
+
+    orbOne.style.transform = `translateY(${y*.08}px)`;
+    orbTwo.style.transform = `translateY(${y*-.05}px)`;
+
+},{passive:true});
 
 
-                    target.scrollIntoView({
+/* PWA INSTALL */
 
-                        behavior:"smooth"
+let deferredInstallPrompt = null;
 
-                    });
+const installButton =
+    document.getElementById("installApp");
 
-                }
-            );
+const isStandalone =
+    window.matchMedia("(display-mode: standalone)").matches ||
+    window.navigator.standalone === true;
 
-        }
-    );
+if(isStandalone){
+    installButton.style.display = "none";
+}
 
+window.addEventListener("beforeinstallprompt",event=>{
 
-/* =========================================================
-   BACKGROUND PARALLAX
-========================================================= */
+    event.preventDefault();
 
-window.addEventListener(
-    "scroll",
-    () => {
+    deferredInstallPrompt = event;
 
-        const y =
-            window.scrollY;
+    installButton.classList.add("visible");
 
+});
 
-        const orbOne =
-            document.querySelector(
-                ".orb.one"
-            );
+installButton.addEventListener("click",async()=>{
 
+    if(!deferredInstallPrompt){
 
-        const orbTwo =
-            document.querySelector(
-                ".orb.two"
-            );
+        alert(
+            "Chrome 메뉴에서 '앱 설치' 또는 '홈 화면에 추가'를 선택해 주세요."
+        );
 
-
-        if(orbOne){
-
-            orbOne.style.transform =
-                `translateY(${y * .08}px)`;
-
-        }
-
-
-        if(orbTwo){
-
-            orbTwo.style.transform =
-                `translateY(${y * -.05}px)`;
-
-        }
-
-    },
-    {
-        passive:true
+        return;
     }
-);
+
+    deferredInstallPrompt.prompt();
+
+    const result = await deferredInstallPrompt.userChoice;
+
+    if(result.outcome === "accepted"){
+        installButton.classList.remove("visible");
+    }
+
+    deferredInstallPrompt = null;
+
+});
+
+window.addEventListener("appinstalled",()=>{
+
+    installButton.classList.remove("visible");
+
+    deferredInstallPrompt = null;
+
+    console.log("ANYWAY APP 설치 완료");
+
+});
 
 
-/* =========================================================
-   INITIAL UPDATE
-========================================================= */
+/* SERVICE WORKER */
+
+if("serviceWorker" in navigator){
+
+    window.addEventListener("load",async()=>{
+
+        try{
+
+            const registration =
+                await navigator.serviceWorker.register(
+                    "./service-worker.js",
+                    {scope:"./"}
+                );
+
+            console.log(
+                "ANYWAY PWA 활성화:",
+                registration.scope
+            );
+
+            registration.update();
+
+        }catch(error){
+
+            console.error(
+                "PWA 등록 실패:",
+                error
+            );
+
+        }
+
+    });
+
+}
+
+
+/* INITIAL UPDATE */
 
 updateHeader();
-
 updateProgress();
 
 </script>
 
 </body>
-    </html>
+</html>
