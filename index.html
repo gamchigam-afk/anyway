@@ -7,13 +7,6 @@
 <meta name="theme-color" content="#f5f5f3">
 <meta name="description" content="Anyway. — We make things.">
 
-<link rel="manifest" href="./manifest.json">
-<link rel="apple-touch-icon" href="./icon-192.png">
-<meta name="mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-status-bar-style" content="default">
-<meta name="apple-mobile-web-app-title" content="ANYWAY">
-
 <title>Anyway. — Studio</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -21,15 +14,9 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+KR:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
 <style>
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-}
+*{margin:0;padding:0;box-sizing:border-box;}
 
-html{
-    scroll-behavior:smooth;
-}
+html{scroll-behavior:smooth;}
 
 body{
     background:#f5f5f3;
@@ -38,19 +25,9 @@ body{
     overflow-x:hidden;
 }
 
-a{
-    color:inherit;
-    text-decoration:none;
-}
-
-img{
-    max-width:100%;
-    display:block;
-}
-
-button{
-    font:inherit;
-}
+a{color:inherit;text-decoration:none;}
+img{max-width:100%;display:block;}
+button{font:inherit;}
 
 :root{
     --bg:#f5f5f3;
@@ -109,14 +86,8 @@ button{
 }
 
 @keyframes introLogo{
-    from{
-        opacity:0;
-        transform:translateY(20px) scale(.95);
-    }
-    to{
-        opacity:1;
-        transform:none;
-    }
+    from{opacity:0;transform:translateY(20px) scale(.95);}
+    to{opacity:1;transform:none;}
 }
 
 @keyframes introLine{
@@ -150,15 +121,8 @@ button{
     background:#aaa;
 }
 
-.orb.one{
-    top:-180px;
-    right:-100px;
-}
-
-.orb.two{
-    bottom:-200px;
-    left:-150px;
-}
+.orb.one{top:-180px;right:-100px;}
+.orb.two{bottom:-200px;left:-150px;}
 
 /* PROGRESS */
 
@@ -202,21 +166,10 @@ header.scrolled{
     align-items:center;
 }
 
-.logo-link{
-    display:flex;
-    align-items:center;
-}
+.logo-link{display:flex;align-items:center;}
+.logo{width:105px;height:auto;}
 
-.logo{
-    width:105px;
-    height:auto;
-}
-
-.nav{
-    display:flex;
-    align-items:center;
-    gap:28px;
-}
+.nav{display:flex;align-items:center;gap:28px;}
 
 .nav a{
     position:relative;
@@ -249,11 +202,7 @@ header.scrolled{
     padding:150px clamp(20px,6vw,90px) 100px;
 }
 
-.hero-inner{
-    width:100%;
-    max-width:var(--max);
-    margin:auto;
-}
+.hero-inner{width:100%;max-width:var(--max);margin:auto;}
 
 .hero-top{
     display:flex;
@@ -262,11 +211,7 @@ header.scrolled{
     margin-bottom:45px;
 }
 
-.hero-index{
-    font-size:12px;
-    color:#888;
-    letter-spacing:.08em;
-}
+.hero-index{font-size:12px;color:#888;letter-spacing:.08em;}
 
 .hero-time{
     text-align:right;
@@ -284,11 +229,7 @@ header.scrolled{
 }
 
 .hero-title span{display:block;}
-
-.hero-title .outline{
-    color:transparent;
-    -webkit-text-stroke:1.5px #111;
-}
+.hero-title .outline{color:transparent;-webkit-text-stroke:1.5px #111;}
 
 .hero-bottom{
     margin-top:75px;
@@ -314,11 +255,7 @@ header.scrolled{
     letter-spacing:.15em;
 }
 
-.scroll-line{
-    width:50px;
-    height:1px;
-    background:#aaa;
-}
+.scroll-line{width:50px;height:1px;background:#aaa;}
 
 /* COMMON SECTION */
 
@@ -369,11 +306,7 @@ header.scrolled{
 
 .about-main strong{font-weight:700;}
 
-.about-description{
-    color:#666;
-    font-size:16px;
-    line-height:1.9;
-}
+.about-description{color:#666;font-size:16px;line-height:1.9;}
 
 .stats{
     margin-top:80px;
@@ -382,35 +315,15 @@ header.scrolled{
     border-top:1px solid var(--line);
 }
 
-.stat{
-    padding:25px 20px 25px 0;
-    border-right:1px solid var(--line);
-}
+.stat{padding:25px 20px 25px 0;border-right:1px solid var(--line);}
+.stat:last-child{border-right:0;padding-left:20px;}
 
-.stat:last-child{
-    border-right:0;
-    padding-left:20px;
-}
-
-.stat-number{
-    font-size:38px;
-    font-weight:700;
-    letter-spacing:-.05em;
-}
-
-.stat-label{
-    margin-top:8px;
-    color:#888;
-    font-size:11px;
-}
+.stat-number{font-size:38px;font-weight:700;letter-spacing:-.05em;}
+.stat-label{margin-top:8px;color:#888;font-size:11px;}
 
 /* PHILOSOPHY */
 
-.philosophy{
-    background:#111;
-    color:#fff;
-}
-
+.philosophy{background:#111;color:#fff;}
 .philosophy .section-label{color:#777;}
 .philosophy .section-label::before{background:#666;}
 
@@ -430,15 +343,8 @@ header.scrolled{
     transition:color .6s,transform .6s;
 }
 
-.philosophy-line.active{
-    color:#fff;
-    transform:translateX(25px);
-}
-
-.philosophy-line em{
-    font-style:normal;
-    color:#fff;
-}
+.philosophy-line.active{color:#fff;transform:translateX(25px);}
+.philosophy-line em{font-style:normal;color:#fff;}
 
 /* WEB HUB */
 
@@ -480,11 +386,7 @@ header.scrolled{
     justify-content:space-between;
 }
 
-.hub-small{
-    color:#777;
-    font-size:11px;
-    letter-spacing:.15em;
-}
+.hub-small{color:#777;font-size:11px;letter-spacing:.15em;}
 
 .hub-title{
     font-size:clamp(60px,11vw,150px);
@@ -500,29 +402,13 @@ header.scrolled{
     margin-top:80px;
 }
 
-.hub-description{
-    max-width:450px;
-    font-size:16px;
-    line-height:1.7;
-    color:#aaa;
-}
-
-.hub-arrow{
-    font-size:70px;
-    line-height:1;
-    transition:transform .4s var(--ease);
-}
-
-.hub-card:hover .hub-arrow{
-    transform:translate(12px,-12px);
-}
+.hub-description{max-width:450px;font-size:16px;line-height:1.7;color:#aaa;}
+.hub-arrow{font-size:70px;line-height:1;transition:transform .4s var(--ease);}
+.hub-card:hover .hub-arrow{transform:translate(12px,-12px);}
 
 /* NEWS */
 
-.news-list{
-    margin-top:70px;
-    border-top:1px solid var(--line);
-}
+.news-list{margin-top:70px;border-top:1px solid var(--line);}
 
 .news-item{
     display:grid;
@@ -534,27 +420,10 @@ header.scrolled{
     transition:padding .35s,background .35s;
 }
 
-.news-item:hover{
-    padding-left:20px;
-    padding-right:20px;
-}
-
-.news-date{
-    font-size:11px;
-    color:#999;
-}
-
-.news-title{
-    font-size:clamp(17px,2vw,24px);
-    letter-spacing:-.03em;
-}
-
-.news-type{
-    font-size:10px;
-    color:#999;
-    margin-top:6px;
-}
-
+.news-item:hover{padding-left:20px;padding-right:20px;}
+.news-date{font-size:11px;color:#999;}
+.news-title{font-size:clamp(17px,2vw,24px);letter-spacing:-.03em;}
+.news-type{font-size:10px;color:#999;margin-top:6px;}
 .news-arrow{font-size:18px;}
 
 /* LAB */
@@ -577,21 +446,9 @@ header.scrolled{
     transition:transform .4s var(--ease),background .4s;
 }
 
-.lab-card:hover{
-    transform:translateY(-8px);
-    background:#fff;
-}
-
-.lab-number{
-    color:#999;
-    font-size:11px;
-}
-
-.lab-title{
-    font-size:25px;
-    font-weight:600;
-    letter-spacing:-.04em;
-}
+.lab-card:hover{transform:translateY(-8px);background:#fff;}
+.lab-number{color:#999;font-size:11px;}
+.lab-title{font-size:25px;font-weight:600;letter-spacing:-.04em;}
 
 .lab-status{
     display:inline-block;
@@ -622,13 +479,7 @@ header.scrolled{
     font-weight:800;
 }
 
-.contact-text{
-    max-width:500px;
-    margin-top:50px;
-    color:#666;
-    line-height:1.8;
-    font-size:16px;
-}
+.contact-text{max-width:500px;margin-top:50px;color:#666;line-height:1.8;font-size:16px;}
 
 .contact-email{
     display:inline-flex;
@@ -649,11 +500,7 @@ header.scrolled{
 
 /* FOOTER */
 
-footer{
-    background:#111;
-    color:#fff;
-    padding:60px clamp(20px,6vw,90px);
-}
+footer{background:#111;color:#fff;padding:60px clamp(20px,6vw,90px);}
 
 .footer-inner{
     max-width:var(--max);
@@ -663,17 +510,9 @@ footer{
     align-items:flex-end;
 }
 
-.footer-logo{
-    width:100px;
-    filter:brightness(0) invert(1);
-}
+.footer-logo{width:100px;filter:brightness(0) invert(1);}
 
-.footer-right{
-    text-align:right;
-    color:#777;
-    font-size:10px;
-    line-height:1.8;
-}
+.footer-right{text-align:right;color:#777;font-size:10px;line-height:1.8;}
 
 /* REVEAL */
 
@@ -683,11 +522,7 @@ footer{
     transition:opacity .9s var(--ease),transform .9s var(--ease);
 }
 
-.reveal.show{
-    opacity:1;
-    transform:none;
-}
-
+.reveal.show{opacity:1;transform:none;}
 .delay-1{transition-delay:.08s;}
 .delay-2{transition-delay:.16s;}
 .delay-3{transition-delay:.24s;}
@@ -706,19 +541,16 @@ footer{
     mix-blend-mode:difference;
 }
 
-.cursor.big{
-    width:45px;
-    height:45px;
-}
+.cursor.big{width:45px;height:45px;}
 
-/* PWA INSTALL BUTTON */
+/* INSTALL BUTTON */
 
 .install-app{
     position:fixed;
     right:24px;
     bottom:24px;
     z-index:8000;
-    display:none;
+    display:flex;
     align-items:center;
     gap:12px;
     padding:14px 20px;
@@ -734,13 +566,7 @@ footer{
     transition:transform .3s,background .3s;
 }
 
-.install-app.visible{display:flex;}
-
-.install-app:hover{
-    transform:translateY(-4px);
-    background:#333;
-}
-
+.install-app:hover{transform:translateY(-4px);background:#333;}
 .install-app span{font-size:17px;}
 
 /* MOBILE */
@@ -751,73 +577,34 @@ footer{
     .nav{gap:12px;}
     .nav a{font-size:9px;}
 
-    .hero{
-        min-height:90vh;
-        padding-top:120px;
-    }
-
+    .hero{min-height:90vh;padding-top:120px;}
     .hero-top{align-items:flex-start;}
     .hero-time{font-size:9px;}
 
-    .hero-bottom{
-        flex-direction:column;
-        align-items:flex-start;
-        margin-top:55px;
-    }
-
+    .hero-bottom{flex-direction:column;align-items:flex-start;margin-top:55px;}
     .scroll-indicator{display:none;}
 
-    .section-inner{
-        padding-top:100px;
-        padding-bottom:100px;
-    }
-
-    .about-grid{
-        grid-template-columns:1fr;
-        gap:60px;
-    }
-
+    .section-inner{padding-top:100px;padding-bottom:100px;}
+    .about-grid{grid-template-columns:1fr;gap:60px;}
     .stats{margin-top:50px;}
     .stat-number{font-size:28px;}
     .stat-label{font-size:9px;}
 
     .philosophy-content{min-height:500px;}
-
-    .philosophy-line.active{
-        transform:translateX(10px);
-    }
+    .philosophy-line.active{transform:translateX(10px);}
 
     .hub-card{min-height:430px;}
-
-    .hub-bottom{
-        flex-direction:column;
-        align-items:flex-start;
-        gap:30px;
-        margin-top:60px;
-    }
-
+    .hub-bottom{flex-direction:column;align-items:flex-start;gap:30px;margin-top:60px;}
     .hub-arrow{font-size:50px;}
 
-    .news-item{
-        grid-template-columns:65px 1fr 20px;
-        gap:12px;
-    }
-
-    .news-item:hover{
-        padding-left:8px;
-        padding-right:8px;
-    }
+    .news-item{grid-template-columns:65px 1fr 20px;gap:12px;}
+    .news-item:hover{padding-left:8px;padding-right:8px;}
 
     .lab-grid{grid-template-columns:1fr;}
     .lab-card{min-height:220px;}
     .contact-inner{min-height:550px;}
 
-    .footer-inner{
-        flex-direction:column;
-        align-items:flex-start;
-        gap:30px;
-    }
-
+    .footer-inner{flex-direction:column;align-items:flex-start;gap:30px;}
     .footer-right{text-align:left;}
     .cursor{display:none;}
 
@@ -838,10 +625,7 @@ footer{
         transition-duration:.01ms !important;
     }
 
-    .reveal{
-        opacity:1;
-        transform:none;
-    }
+    .reveal{opacity:1;transform:none;}
 }
 </style>
 </head>
@@ -851,12 +635,7 @@ footer{
 <!-- INTRO -->
 <div class="intro" id="intro">
     <div class="intro-inner">
-        <img
-            src="logo.png"
-            class="intro-logo"
-            alt="Anyway."
-            onerror="this.style.display='none';"
-        >
+        <img src="logo.png" class="intro-logo" alt="Anyway." onerror="this.style.display='none';">
         <div class="intro-line"></div>
     </div>
 </div>
@@ -867,11 +646,8 @@ footer{
 
 <div class="progress" id="progress"></div>
 
-<button
-    class="install-app"
-    id="installApp"
-    type="button"
->
+<!-- INSTALL ANYWAY -->
+<button class="install-app" id="installApp" type="button">
     INSTALL ANYWAY
     <span>↗</span>
 </button>
@@ -881,14 +657,8 @@ footer{
 <!-- HEADER -->
 <header id="header">
     <div class="header-inner">
-
         <a href="#top" class="logo-link" aria-label="맨 위로">
-            <img
-                src="logo.png"
-                class="logo"
-                alt="Anyway."
-                onerror="this.style.display='none';"
-            >
+            <img src="logo.png" class="logo" alt="Anyway." onerror="this.style.display='none';">
         </a>
 
         <nav class="nav">
@@ -898,7 +668,6 @@ footer{
             <a href="#lab">LAB</a>
             <a href="#contact">CONTACT</a>
         </nav>
-
     </div>
 </header>
 
@@ -907,10 +676,8 @@ footer{
 <!-- HERO -->
 <section class="hero">
     <div class="hero-inner">
-
         <div class="hero-top reveal">
             <div class="hero-index">ANYWAY / STUDIO</div>
-
             <div class="hero-time">
                 <div id="date">2026. 09. 30</div>
                 <div id="time">00:00:00</div>
@@ -923,7 +690,6 @@ footer{
         </h1>
 
         <div class="hero-bottom reveal delay-2">
-
             <p class="hero-description">
                 아이디어를 만들고,
                 실험하고,
@@ -937,20 +703,16 @@ footer{
                 SCROLL
                 <span class="scroll-line"></span>
             </div>
-
         </div>
-
     </div>
 </section>
 
 <!-- ABOUT -->
 <section id="about">
     <div class="section-inner">
-
         <div class="section-label reveal">01 — ABOUT</div>
 
         <div class="about-grid">
-
             <div class="about-main reveal">
                 <strong>Anyway.</strong>
                 는
@@ -961,7 +723,6 @@ footer{
             </div>
 
             <div class="reveal delay-1">
-
                 <p class="about-description">
                     웹사이트부터 게임,
                     실험적인 인터랙션까지.
@@ -975,24 +736,19 @@ footer{
                 </p>
 
                 <div class="stats">
-
                     <div class="stat">
                         <div class="stat-number">01</div>
                         <div class="stat-label">IDEA</div>
                     </div>
-
                     <div class="stat">
                         <div class="stat-number">02</div>
                         <div class="stat-label">BUILD</div>
                     </div>
-
                     <div class="stat">
                         <div class="stat-number">∞</div>
                         <div class="stat-label">EXPERIMENT</div>
                     </div>
-
                 </div>
-
             </div>
         </div>
     </div>
@@ -1001,25 +757,20 @@ footer{
 <!-- PHILOSOPHY -->
 <section class="philosophy" id="philosophy">
     <div class="section-inner">
-
         <div class="section-label reveal">02 — PHILOSOPHY</div>
 
         <div class="philosophy-content">
             <div class="philosophy-line">Think.</div>
             <div class="philosophy-line">Make.</div>
             <div class="philosophy-line">Break.</div>
-            <div class="philosophy-line">
-                <em>Make it again.</em>
-            </div>
+            <div class="philosophy-line"><em>Make it again.</em></div>
         </div>
-
     </div>
 </section>
 
 <!-- WEB HUB -->
 <section class="hub-section">
     <div class="section-inner">
-
         <div class="section-label reveal">03 — WEB HUB</div>
 
         <a
@@ -1029,12 +780,8 @@ footer{
             target="_blank"
             rel="noopener noreferrer"
         >
-
             <div class="hub-card-content">
-
-                <div class="hub-small">
-                    ALL PROJECTS / ONE PLACE
-                </div>
+                <div class="hub-small">ALL PROJECTS / ONE PLACE</div>
 
                 <div class="hub-title">
                     WEB<br>
@@ -1042,7 +789,6 @@ footer{
                 </div>
 
                 <div class="hub-bottom">
-
                     <p class="hub-description">
                         Anyway에서 만들어진
                         다양한 프로젝트를 한곳에서
@@ -1053,18 +799,15 @@ footer{
                     </p>
 
                     <div class="hub-arrow">↗</div>
-
                 </div>
             </div>
         </a>
-
     </div>
 </section>
 
 <!-- NEWS -->
 <section id="news">
     <div class="section-inner">
-
         <div class="section-label reveal">04 — NEWS</div>
 
         <h2 class="section-title reveal">
@@ -1073,7 +816,6 @@ footer{
         </h2>
 
         <div class="news-list">
-
             <div class="news-item reveal">
                 <div class="news-date">2026</div>
                 <div>
@@ -1100,7 +842,6 @@ footer{
                 </div>
                 <div class="news-arrow">↗</div>
             </div>
-
         </div>
     </div>
 </section>
@@ -1108,7 +849,6 @@ footer{
 <!-- LAB -->
 <section id="lab">
     <div class="section-inner">
-
         <div class="section-label reveal">05 — LAB</div>
 
         <h2 class="section-title reveal">
@@ -1117,7 +857,6 @@ footer{
         </h2>
 
         <div class="lab-grid">
-
             <div class="lab-card reveal">
                 <div class="lab-number">LAB / 001</div>
                 <div>
@@ -1144,7 +883,6 @@ footer{
                     <span class="lab-status">IN DEVELOPMENT</span>
                 </div>
             </div>
-
         </div>
     </div>
 </section>
@@ -1152,7 +890,6 @@ footer{
 <!-- CONTACT -->
 <section class="contact" id="contact">
     <div class="section-inner contact-inner">
-
         <div class="section-label reveal">06 — CONTACT</div>
 
         <h2 class="contact-title reveal delay-1">
@@ -1169,14 +906,10 @@ footer{
             아래 이메일을 이용해주세요.
         </p>
 
-        <a
-            href="mailto:gamchigam@gmail.com"
-            class="contact-email reveal delay-3"
-        >
+        <a href="mailto:gamchigam@gmail.com" class="contact-email reveal delay-3">
             gamchigam@gmail.com
             <span>↗</span>
         </a>
-
     </div>
 </section>
 
@@ -1185,20 +918,13 @@ footer{
 <!-- FOOTER -->
 <footer>
     <div class="footer-inner">
-
-        <img
-            src="logo.png"
-            class="footer-logo"
-            alt="Anyway."
-            onerror="this.style.display='none';"
-        >
+        <img src="logo.png" class="footer-logo" alt="Anyway." onerror="this.style.display='none';">
 
         <div class="footer-right">
             ANYWAY. STUDIO
             <br>
             © 2026 Anyway. All rights reserved.
         </div>
-
     </div>
 </footer>
 
@@ -1228,7 +954,6 @@ window.addEventListener("load",()=>{
 /* CLOCK */
 
 function updateClock(){
-
     const now = new Date();
 
     const year = now.getFullYear();
@@ -1253,7 +978,6 @@ setInterval(updateClock,1000);
 /* SCROLL PROGRESS */
 
 function updateProgress(){
-
     const scrollTop = window.scrollY;
 
     const height =
@@ -1284,18 +1008,12 @@ window.addEventListener("scroll",updateHeader,{passive:true});
 /* REVEAL */
 
 const revealObserver = new IntersectionObserver(entries=>{
-
     entries.forEach(entry=>{
-
         if(entry.isIntersecting){
-
             entry.target.classList.add("show");
-
             revealObserver.unobserve(entry.target);
         }
-
     });
-
 },{threshold:.08});
 
 document.querySelectorAll(".reveal").forEach(element=>{
@@ -1309,19 +1027,14 @@ const philosophyLines =
     document.querySelectorAll(".philosophy-line");
 
 function philosophyScroll(){
-
     const center = window.innerHeight / 2;
 
     philosophyLines.forEach(line=>{
-
         const rect = line.getBoundingClientRect();
-
         const lineCenter = rect.top + rect.height / 2;
-
         const distance = Math.abs(center-lineCenter);
 
         line.classList.toggle("active",distance < 180);
-
     });
 }
 
@@ -1334,9 +1047,7 @@ philosophyScroll();
 const hubCard = document.getElementById("hubCard");
 
 if(window.matchMedia("(pointer:fine)").matches){
-
     hubCard.addEventListener("mousemove",event=>{
-
         const rect = hubCard.getBoundingClientRect();
 
         const x = event.clientX-rect.left;
@@ -1353,13 +1064,11 @@ if(window.matchMedia("(pointer:fine)").matches){
 
         hubCard.style.transform =
             `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.01)`;
-
     });
 
     hubCard.addEventListener("mouseleave",()=>{
         hubCard.style.transform = "";
     });
-
 }
 
 
@@ -1368,7 +1077,6 @@ if(window.matchMedia("(pointer:fine)").matches){
 const cursor = document.getElementById("cursor");
 
 if(window.matchMedia("(pointer:fine)").matches){
-
     let mouseX = 0;
     let mouseY = 0;
     let currentX = 0;
@@ -1380,7 +1088,6 @@ if(window.matchMedia("(pointer:fine)").matches){
     });
 
     function cursorLoop(){
-
         currentX += (mouseX-currentX)*.18;
         currentY += (mouseY-currentY)*.18;
 
@@ -1392,8 +1099,7 @@ if(window.matchMedia("(pointer:fine)").matches){
 
     cursorLoop();
 
-    document.querySelectorAll("a").forEach(link=>{
-
+    document.querySelectorAll("a,button").forEach(link=>{
         link.addEventListener("mouseenter",()=>{
             cursor.classList.add("big");
         });
@@ -1401,18 +1107,14 @@ if(window.matchMedia("(pointer:fine)").matches){
         link.addEventListener("mouseleave",()=>{
             cursor.classList.remove("big");
         });
-
     });
-
 }
 
 
 /* SMOOTH ANCHOR */
 
 document.querySelectorAll('a[href^="#"]').forEach(link=>{
-
     link.addEventListener("click",event=>{
-
         const target = document.querySelector(
             link.getAttribute("href")
         );
@@ -1424,9 +1126,7 @@ document.querySelectorAll('a[href^="#"]').forEach(link=>{
         target.scrollIntoView({
             behavior:"smooth"
         });
-
     });
-
 });
 
 
@@ -1436,107 +1136,23 @@ const orbOne = document.querySelector(".orb.one");
 const orbTwo = document.querySelector(".orb.two");
 
 window.addEventListener("scroll",()=>{
-
     const y = window.scrollY;
 
     orbOne.style.transform = `translateY(${y*.08}px)`;
     orbTwo.style.transform = `translateY(${y*-.05}px)`;
-
 },{passive:true});
 
 
-/* PWA INSTALL */
+/* INSTALL ANYWAY → APP PAGE */
 
-let deferredInstallPrompt = null;
+const installButton = document.getElementById("installApp");
 
-const installButton =
-    document.getElementById("installApp");
+const APP_URL =
+    "https://gamchigam-afk.github.io/anyway-app/";
 
-const isStandalone =
-    window.matchMedia("(display-mode: standalone)").matches ||
-    window.navigator.standalone === true;
-
-if(isStandalone){
-    installButton.style.display = "none";
-}
-
-window.addEventListener("beforeinstallprompt",event=>{
-
-    event.preventDefault();
-
-    deferredInstallPrompt = event;
-
-    installButton.classList.add("visible");
-
+installButton.addEventListener("click",()=>{
+    window.location.href = APP_URL;
 });
-
-installButton.addEventListener("click",async()=>{
-
-    if(!deferredInstallPrompt){
-
-        alert(
-            "Chrome 메뉴에서 '앱 설치' 또는 '홈 화면에 추가'를 선택해 주세요."
-        );
-
-        return;
-    }
-
-    deferredInstallPrompt.prompt();
-
-    const result = await deferredInstallPrompt.userChoice;
-
-    if(result.outcome === "accepted"){
-        installButton.classList.remove("visible");
-    }
-
-    deferredInstallPrompt = null;
-
-});
-
-window.addEventListener("appinstalled",()=>{
-
-    installButton.classList.remove("visible");
-
-    deferredInstallPrompt = null;
-
-    console.log("ANYWAY APP 설치 완료");
-
-});
-
-
-/* SERVICE WORKER */
-
-if("serviceWorker" in navigator){
-
-    window.addEventListener("load",async()=>{
-
-        try{
-
-            const registration =
-                await navigator.serviceWorker.register(
-                    "./service-worker.js",
-                    {scope:"./"}
-                );
-
-            console.log(
-                "ANYWAY PWA 활성화:",
-                registration.scope
-            );
-
-            registration.update();
-
-        }catch(error){
-
-            console.error(
-                "PWA 등록 실패:",
-                error
-            );
-
-        }
-
-    });
-
-}
 
 
 /* INITIAL UPDATE */
